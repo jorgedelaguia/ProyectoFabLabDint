@@ -2,7 +2,7 @@
 
 
 
-Imports System.Data.OleDb
+Imports System.Data.SqlClient
 
 ''' <summary>
 ''' Gateway para la tabla Usuarios
@@ -11,12 +11,12 @@ Public Class UsuariosGateway
     ''' <summary>
     ''' Objeto Connection
     ''' </summary>
-    Private conexion As OleDbConnection
+    Private conexion As SqlConnection
 
     ''' <summary>
     ''' Objeto Command
     ''' </summary>
-    Private comando As OleDbCommand
+    Private comando As SqlCommand
 
 
     ''' <summary>
@@ -24,8 +24,8 @@ Public Class UsuariosGateway
     ''' </summary>
     ''' <param name="cadena">Cadena de conexion</param>
     Public Sub New(ByRef cadena As String)
-        conexion = New OleDbConnection(cadena)
-        comando = New OleDbCommand()
+        conexion = New SqlConnection(cadena)
+        comando = New SqlCommand()
         comando.Connection = conexion
     End Sub
 
@@ -83,6 +83,95 @@ Public Class UsuariosGateway
         Return filas
 
     End Function
+
+
+
+    Public Function Actualizar(id As Integer, nombre As String, apellidos As String, fecha_nacimiento As String, telefono As String, email As String, direccion As String, organizacion As String, tipo As Integer) As Integer
+
+        Dim filas As Integer
+
+        Dim consulta As String = "Update Usuarios set nombre=@nombre, apellidos=@apellidos, fecha_nacimiento@fecha_nacimiento, telefono=@telefono, email=@email, direccion=@direccion, organizacion=@organizacion, tipo=@tipo WHERE id=@id"
+
+        'Validar datos
+
+
+
+
+
+        'Ejercutar consulta
+        Try
+            conexion.Open()
+            comando.CommandText = consulta
+            comando.Parameters.Add("@id", SqlDbType.Int)
+            comando.Parameters.Add("@nombre", SqlDbType.VarChar)
+            comando.Parameters.Add("@apellidos", SqlDbType.VarChar)
+            comando.Parameters.Add("@fecha_nacimiento", SqlDbType.Date)
+            comando.Parameters.Add("@telefono", SqlDbType.VarChar)
+            comando.Parameters.Add("@email", SqlDbType.VarChar)
+            comando.Parameters.Add("@direccion", SqlDbType.VarChar)
+            comando.Parameters.Add("@organizacion", SqlDbType.VarChar)
+            comando.Parameters.Add("@tipo", SqlDbType.Int)
+
+
+            comando.Parameters("@id").Value = id
+            comando.Parameters("@nombre").Value = nombre
+            comando.Parameters("@apellidos").Value = apellidos
+            comando.Parameters("@fecha_nacimiento").Value = fecha_nacimiento
+            comando.Parameters("@telefono").Value = telefono
+            comando.Parameters("@email").Value = email
+            comando.Parameters("@direccion").Value = direccion
+            comando.Parameters("@organizacion").Value = organizacion
+            comando.Parameters("@tipo").Value = tipo
+
+            filas = comando.ExecuteNonQuery()
+
+        Catch ex As Exception
+            Throw New Exception(ex.Message, ex)
+        Finally
+            If (conexion IsNot Nothing) Then
+                conexion.Close()
+            End If
+        End Try
+
+        Return filas
+
+    End Function
+
+
+
+
+    Public Function Eliminar(id As Integer) As Integer
+
+        Dim filas As Integer
+
+        Dim consulta As String = "DELETE FROM Usuarios WHERE id=@id"
+
+        'Validar
+        If id = 0 Then
+            Throw New ArgumentException("El id no puede estar vacio")
+        End If
+
+
+
+        'Ejecutar
+        Try
+            comando.CommandText = consulta
+            comando.Parameters.Add("@id", SqlDbType.Int)
+            comando.Parameters("@id").Value = id
+            filas = comando.ExecuteNonQuery()
+
+        Catch ex As Exception
+            Throw New Exception(ex.Message, ex)
+        Finally
+            If (conexion IsNot Nothing) Then
+                conexion.Close()
+            End If
+        End Try
+
+        Return filas
+
+    End Function
+
 
 
 End Class
