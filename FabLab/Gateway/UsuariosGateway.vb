@@ -93,7 +93,7 @@ Public Class UsuariosGateway
         Dim consulta As String = "Update Usuarios set nombre=@nombre, apellidos=@apellidos, fecha_nacimiento@fecha_nacimiento, telefono=@telefono, email=@email, direccion=@direccion, organizacion=@organizacion, tipo=@tipo WHERE id=@id"
 
         'Validar datos
-
+        'TODO: validar datos
 
 
 
