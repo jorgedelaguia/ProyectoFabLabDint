@@ -22,90 +22,156 @@ Partial Class FormGestionMaquinas
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.BuscadorGestionMaquinasTextBox = New System.Windows.Forms.TextBox()
-        Me.nuevaMaquinaButton = New System.Windows.Forms.Button()
-        Me.consultarGestionMaquinasButton = New System.Windows.Forms.Button()
-        Me.editarGestionMaquinasButton = New System.Windows.Forms.Button()
-        Me.EliminarGestionMaquinasButton = New System.Windows.Forms.Button()
+        Me.buscarMaquinaTextBox = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.nuevaMaquinaButton = New System.Windows.Forms.Button()
+        Me.consultarMaquinaButton = New System.Windows.Forms.Button()
+        Me.editarMaquinaButton = New System.Windows.Forms.Button()
+        Me.eliminarMaquinaButton = New System.Windows.Forms.Button()
+        Me.mainTableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.mainTableLayoutPanel.SuspendLayout()
+        Me.TableLayoutPanel1.SuspendLayout()
+        Me.TableLayoutPanel2.SuspendLayout()
         Me.SuspendLayout()
         '
-        'BuscadorGestionMaquinasTextBox
+        'buscarMaquinaTextBox
         '
-        Me.BuscadorGestionMaquinasTextBox.Location = New System.Drawing.Point(30, 33)
-        Me.BuscadorGestionMaquinasTextBox.Name = "BuscadorGestionMaquinasTextBox"
-        Me.BuscadorGestionMaquinasTextBox.Size = New System.Drawing.Size(189, 20)
-        Me.BuscadorGestionMaquinasTextBox.TabIndex = 0
-        Me.BuscadorGestionMaquinasTextBox.Text = "Buscar"
-        '
-        'nuevaMaquinaButton
-        '
-        Me.nuevaMaquinaButton.Location = New System.Drawing.Point(736, 33)
-        Me.nuevaMaquinaButton.Name = "nuevaMaquinaButton"
-        Me.nuevaMaquinaButton.Size = New System.Drawing.Size(98, 32)
-        Me.nuevaMaquinaButton.TabIndex = 1
-        Me.nuevaMaquinaButton.Text = "Nueva máquina"
-        Me.nuevaMaquinaButton.UseVisualStyleBackColor = True
-        '
-        'consultarGestionMaquinasButton
-        '
-        Me.consultarGestionMaquinasButton.Location = New System.Drawing.Point(565, 461)
-        Me.consultarGestionMaquinasButton.Name = "consultarGestionMaquinasButton"
-        Me.consultarGestionMaquinasButton.Size = New System.Drawing.Size(75, 23)
-        Me.consultarGestionMaquinasButton.TabIndex = 2
-        Me.consultarGestionMaquinasButton.Text = "Consultar"
-        Me.consultarGestionMaquinasButton.UseVisualStyleBackColor = True
-        '
-        'editarGestionMaquinasButton
-        '
-        Me.editarGestionMaquinasButton.Location = New System.Drawing.Point(656, 461)
-        Me.editarGestionMaquinasButton.Name = "editarGestionMaquinasButton"
-        Me.editarGestionMaquinasButton.Size = New System.Drawing.Size(75, 23)
-        Me.editarGestionMaquinasButton.TabIndex = 3
-        Me.editarGestionMaquinasButton.Text = "Editar"
-        Me.editarGestionMaquinasButton.UseVisualStyleBackColor = True
-        '
-        'EliminarGestionMaquinasButton
-        '
-        Me.EliminarGestionMaquinasButton.Location = New System.Drawing.Point(746, 461)
-        Me.EliminarGestionMaquinasButton.Name = "EliminarGestionMaquinasButton"
-        Me.EliminarGestionMaquinasButton.Size = New System.Drawing.Size(75, 23)
-        Me.EliminarGestionMaquinasButton.TabIndex = 4
-        Me.EliminarGestionMaquinasButton.Text = "Eliminar"
-        Me.EliminarGestionMaquinasButton.UseVisualStyleBackColor = True
+        Me.buscarMaquinaTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.buscarMaquinaTextBox.Location = New System.Drawing.Point(30, 31)
+        Me.buscarMaquinaTextBox.Margin = New System.Windows.Forms.Padding(30, 3, 3, 3)
+        Me.buscarMaquinaTextBox.Name = "buscarMaquinaTextBox"
+        Me.buscarMaquinaTextBox.Size = New System.Drawing.Size(319, 20)
+        Me.buscarMaquinaTextBox.TabIndex = 0
         '
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(30, 86)
+        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DataGridView1.Location = New System.Drawing.Point(30, 119)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(30)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(804, 360)
-        Me.DataGridView1.TabIndex = 5
+        Me.DataGridView1.Size = New System.Drawing.Size(829, 251)
+        Me.DataGridView1.TabIndex = 1
+        '
+        'nuevaMaquinaButton
+        '
+        Me.nuevaMaquinaButton.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.nuevaMaquinaButton.Location = New System.Drawing.Point(754, 30)
+        Me.nuevaMaquinaButton.Margin = New System.Windows.Forms.Padding(3, 3, 30, 3)
+        Me.nuevaMaquinaButton.Name = "nuevaMaquinaButton"
+        Me.nuevaMaquinaButton.Size = New System.Drawing.Size(99, 23)
+        Me.nuevaMaquinaButton.TabIndex = 2
+        Me.nuevaMaquinaButton.Text = "Nueva maquina"
+        Me.nuevaMaquinaButton.UseVisualStyleBackColor = True
+        '
+        'consultarMaquinaButton
+        '
+        Me.consultarMaquinaButton.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.consultarMaquinaButton.Location = New System.Drawing.Point(16, 8)
+        Me.consultarMaquinaButton.Name = "consultarMaquinaButton"
+        Me.consultarMaquinaButton.Size = New System.Drawing.Size(75, 23)
+        Me.consultarMaquinaButton.TabIndex = 3
+        Me.consultarMaquinaButton.Text = "Consultar"
+        Me.consultarMaquinaButton.UseVisualStyleBackColor = True
+        '
+        'editarMaquinaButton
+        '
+        Me.editarMaquinaButton.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.editarMaquinaButton.Location = New System.Drawing.Point(110, 8)
+        Me.editarMaquinaButton.Name = "editarMaquinaButton"
+        Me.editarMaquinaButton.Size = New System.Drawing.Size(75, 23)
+        Me.editarMaquinaButton.TabIndex = 4
+        Me.editarMaquinaButton.Text = "Editar"
+        Me.editarMaquinaButton.UseVisualStyleBackColor = True
+        '
+        'eliminarMaquinaButton
+        '
+        Me.eliminarMaquinaButton.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.eliminarMaquinaButton.Location = New System.Drawing.Point(206, 8)
+        Me.eliminarMaquinaButton.Name = "eliminarMaquinaButton"
+        Me.eliminarMaquinaButton.Size = New System.Drawing.Size(75, 23)
+        Me.eliminarMaquinaButton.TabIndex = 5
+        Me.eliminarMaquinaButton.Text = "Eliminar"
+        Me.eliminarMaquinaButton.UseVisualStyleBackColor = True
+        '
+        'mainTableLayoutPanel
+        '
+        Me.mainTableLayoutPanel.ColumnCount = 1
+        Me.mainTableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.mainTableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.mainTableLayoutPanel.Controls.Add(Me.TableLayoutPanel1, 0, 2)
+        Me.mainTableLayoutPanel.Controls.Add(Me.DataGridView1, 0, 1)
+        Me.mainTableLayoutPanel.Controls.Add(Me.TableLayoutPanel2, 0, 0)
+        Me.mainTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.mainTableLayoutPanel.Location = New System.Drawing.Point(0, 0)
+        Me.mainTableLayoutPanel.Name = "mainTableLayoutPanel"
+        Me.mainTableLayoutPanel.RowCount = 3
+        Me.mainTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.mainTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70.0!))
+        Me.mainTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.mainTableLayoutPanel.Size = New System.Drawing.Size(889, 445)
+        Me.mainTableLayoutPanel.TabIndex = 6
+        '
+        'TableLayoutPanel1
+        '
+        Me.TableLayoutPanel1.ColumnCount = 3
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel1.Controls.Add(Me.eliminarMaquinaButton, 2, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.consultarMaquinaButton, 0, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.editarMaquinaButton, 1, 0)
+        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(575, 403)
+        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(3, 3, 30, 3)
+        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
+        Me.TableLayoutPanel1.RowCount = 1
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(284, 39)
+        Me.TableLayoutPanel1.TabIndex = 0
+        '
+        'TableLayoutPanel2
+        '
+        Me.TableLayoutPanel2.ColumnCount = 2
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel2.Controls.Add(Me.nuevaMaquinaButton, 1, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.buscarMaquinaTextBox, 0, 0)
+        Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 3)
+        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
+        Me.TableLayoutPanel2.RowCount = 1
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(883, 83)
+        Me.TableLayoutPanel2.TabIndex = 2
         '
         'FormGestionMaquinas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(869, 496)
-        Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.EliminarGestionMaquinasButton)
-        Me.Controls.Add(Me.editarGestionMaquinasButton)
-        Me.Controls.Add(Me.consultarGestionMaquinasButton)
-        Me.Controls.Add(Me.nuevaMaquinaButton)
-        Me.Controls.Add(Me.BuscadorGestionMaquinasTextBox)
+        Me.ClientSize = New System.Drawing.Size(889, 445)
+        Me.Controls.Add(Me.mainTableLayoutPanel)
         Me.Name = "FormGestionMaquinas"
-        Me.Text = "FabLab - Gestion de máquinas"
+        Me.Text = "FormGestionMaquinas"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.mainTableLayoutPanel.ResumeLayout(False)
+        Me.TableLayoutPanel1.ResumeLayout(False)
+        Me.TableLayoutPanel2.ResumeLayout(False)
+        Me.TableLayoutPanel2.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents BuscadorGestionMaquinasTextBox As TextBox
-    Friend WithEvents nuevaMaquinaButton As Button
-    Friend WithEvents consultarGestionMaquinasButton As Button
-    Friend WithEvents editarGestionMaquinasButton As Button
-    Friend WithEvents EliminarGestionMaquinasButton As Button
+    Friend WithEvents buscarMaquinaTextBox As TextBox
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents nuevaMaquinaButton As Button
+    Friend WithEvents consultarMaquinaButton As Button
+    Friend WithEvents editarMaquinaButton As Button
+    Friend WithEvents eliminarMaquinaButton As Button
+    Friend WithEvents mainTableLayoutPanel As TableLayoutPanel
+    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
+    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
 End Class
