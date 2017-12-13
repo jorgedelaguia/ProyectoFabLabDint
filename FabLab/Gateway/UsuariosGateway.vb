@@ -42,12 +42,12 @@ Public Class UsuariosGateway
     ''' <param name="organizacion">Organización</param>
     ''' <param name="tipoUsuario">Tipo usuario</param>
     ''' <returns></returns>
-    Public Function Insertar(nombre As String, apellidos As String, fechaNacimiento As String, telefono As String, email As String, direccion As String, organizacion As String, tipoUsuario As Integer) As Integer
+    Public Function Insertar(nombre As String, apellidos As String, fechaNacimiento As String, telefono As String, email As String, direccion As String, organizacion As String, tipoUsuario As Integer, fecha_alta As String) As Integer
 
         Dim filas As Integer
 
         'FIXME: usar parametros del objeto Command pdf ut3_ado pag 9
-        Dim consulta As String = "INSERT INTO Usuarios(nombre, apellidos, fecha_nacimiento, telefono, email, direccion, organizacion, tipo, fecha_alta) VALUES ('" & nombre & "', '" & apellidos & "', '" & fechaNacimiento & "', '" & telefono & "', '" & email & "', '" & direccion & "', '" & organizacion & "', '" & tipoUsuario & "', '01/12/2999')"
+        Dim consulta As String = "INSERT INTO Usuarios(nombre, apellidos, fecha_nacimiento, telefono, email, direccion, organizacion, tipo, fecha_alta) VALUES ('" & nombre & "', '" & apellidos & "', '" & fechaNacimiento & "', '" & telefono & "', '" & email & "', '" & direccion & "', '" & organizacion & "', '" & tipoUsuario & "', '" & fecha_alta & "')"
 
         'validar datos
         If nombre = "" Or nombre Is Nothing Then
@@ -62,7 +62,8 @@ Public Class UsuariosGateway
             Throw New ArgumentException("El fecha de nacimiento no puede se null/vacio")
         End If
 
-        If IsNumeric(tipoUsuario) Or Not IsNothing(tipoUsuario) Then
+        'If IsNumeric(tipoUsuario) Or Not IsNothing(tipoUsuario) Then
+        If IsNothing(tipoUsuario) Then
             Throw New ArgumentException("El tipo de usuario no puede se null/vacio")
         End If
 
@@ -90,7 +91,7 @@ Public Class UsuariosGateway
 
         Dim filas As Integer
 
-        Dim consulta As String = "Update Usuarios set nombre=@nombre, apellidos=@apellidos, fecha_nacimiento@fecha_nacimiento, telefono=@telefono, email=@email, direccion=@direccion, organizacion=@organizacion, tipo=@tipo WHERE id=@id"
+        Dim consulta As String = "Update Usuarios set nombre=@nombre, apellidos=@apellidos, fecha_nacimiento=@fecha_nacimiento, telefono=@telefono, email=@email, direccion=@direccion, organizacion=@organizacion, tipo=@tipo WHERE id=@id"
 
         'Validar datos
         'TODO: validar datos

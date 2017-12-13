@@ -162,10 +162,11 @@ Partial Class FormUsuarios
         '
         'nombreUsuarioTextBox
         '
-        Me.nombreUsuarioTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.nombreUsuarioTextBox.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.nombreUsuarioTextBox.Location = New System.Drawing.Point(117, 32)
+        Me.nombreUsuarioTextBox.Margin = New System.Windows.Forms.Padding(3, 3, 30, 3)
         Me.nombreUsuarioTextBox.Name = "nombreUsuarioTextBox"
-        Me.nombreUsuarioTextBox.Size = New System.Drawing.Size(94, 20)
+        Me.nombreUsuarioTextBox.Size = New System.Drawing.Size(223, 20)
         Me.nombreUsuarioTextBox.TabIndex = 10
         '
         'telefonoUsuarioTextBox
@@ -178,26 +179,29 @@ Partial Class FormUsuarios
         '
         'organizacionUsuarioTextBox
         '
-        Me.organizacionUsuarioTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.organizacionUsuarioTextBox.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.organizacionUsuarioTextBox.Location = New System.Drawing.Point(117, 202)
+        Me.organizacionUsuarioTextBox.Margin = New System.Windows.Forms.Padding(3, 3, 30, 3)
         Me.organizacionUsuarioTextBox.Name = "organizacionUsuarioTextBox"
-        Me.organizacionUsuarioTextBox.Size = New System.Drawing.Size(94, 20)
+        Me.organizacionUsuarioTextBox.Size = New System.Drawing.Size(223, 20)
         Me.organizacionUsuarioTextBox.TabIndex = 12
         '
         'apellidosUsuarioTextBox
         '
-        Me.apellidosUsuarioTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.apellidosUsuarioTextBox.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.apellidosUsuarioTextBox.Location = New System.Drawing.Point(487, 32)
+        Me.apellidosUsuarioTextBox.Margin = New System.Windows.Forms.Padding(3, 3, 30, 3)
         Me.apellidosUsuarioTextBox.Name = "apellidosUsuarioTextBox"
-        Me.apellidosUsuarioTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.apellidosUsuarioTextBox.Size = New System.Drawing.Size(223, 20)
         Me.apellidosUsuarioTextBox.TabIndex = 13
         '
         'emailUsuarioTextBox
         '
-        Me.emailUsuarioTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.emailUsuarioTextBox.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.emailUsuarioTextBox.Location = New System.Drawing.Point(487, 117)
+        Me.emailUsuarioTextBox.Margin = New System.Windows.Forms.Padding(3, 3, 30, 3)
         Me.emailUsuarioTextBox.Name = "emailUsuarioTextBox"
-        Me.emailUsuarioTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.emailUsuarioTextBox.Size = New System.Drawing.Size(223, 20)
         Me.emailUsuarioTextBox.TabIndex = 14
         '
         'direccionPostalUsuarioTextBox
@@ -255,11 +259,12 @@ Partial Class FormUsuarios
         '
         'tipoUsuarioComboBox
         '
-        Me.tipoUsuarioComboBox.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.tipoUsuarioComboBox.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tipoUsuarioComboBox.FormattingEnabled = True
         Me.tipoUsuarioComboBox.Location = New System.Drawing.Point(3, 29)
+        Me.tipoUsuarioComboBox.Margin = New System.Windows.Forms.Padding(3, 3, 15, 3)
         Me.tipoUsuarioComboBox.Name = "tipoUsuarioComboBox"
-        Me.tipoUsuarioComboBox.Size = New System.Drawing.Size(121, 21)
+        Me.tipoUsuarioComboBox.Size = New System.Drawing.Size(150, 21)
         Me.tipoUsuarioComboBox.TabIndex = 22
         '
         'aceptarUsuarioButton
