@@ -15,4 +15,17 @@ Public Class Form1
         form.MdiParent = Me
         form.Show()
     End Sub
+
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    'Temporal
+    Private Sub VerUsuarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VerUsuarioToolStripMenuItem.Click
+        Dim nuevoUsuarioForm As New FormUsuarios
+        nuevoUsuarioForm.MdiParent = Me
+
+        nuevoUsuarioForm.Show()
+    End Sub
 End Class

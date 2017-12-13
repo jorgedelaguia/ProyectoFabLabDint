@@ -27,6 +27,7 @@ Partial Class Form1
         Me.NuevoUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MáquinasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GestiónDeMáquinasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VerUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -41,7 +42,7 @@ Partial Class Form1
         '
         'UsuariosToolStripMenuItem
         '
-        Me.UsuariosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoUsuarioToolStripMenuItem})
+        Me.UsuariosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoUsuarioToolStripMenuItem, Me.VerUsuarioToolStripMenuItem})
         Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
         Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(64, 20)
         Me.UsuariosToolStripMenuItem.Text = "Usuarios"
@@ -49,7 +50,7 @@ Partial Class Form1
         'NuevoUsuarioToolStripMenuItem
         '
         Me.NuevoUsuarioToolStripMenuItem.Name = "NuevoUsuarioToolStripMenuItem"
-        Me.NuevoUsuarioToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
+        Me.NuevoUsuarioToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.NuevoUsuarioToolStripMenuItem.Text = "Nuevo usuario"
         '
         'MáquinasToolStripMenuItem
@@ -64,6 +65,12 @@ Partial Class Form1
         Me.GestiónDeMáquinasToolStripMenuItem.Name = "GestiónDeMáquinasToolStripMenuItem"
         Me.GestiónDeMáquinasToolStripMenuItem.Size = New System.Drawing.Size(185, 22)
         Me.GestiónDeMáquinasToolStripMenuItem.Text = "Gestión de máquinas"
+        '
+        'VerUsuarioToolStripMenuItem
+        '
+        Me.VerUsuarioToolStripMenuItem.Name = "VerUsuarioToolStripMenuItem"
+        Me.VerUsuarioToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.VerUsuarioToolStripMenuItem.Text = "Ver usuario"
         '
         'Form1
         '
@@ -88,4 +95,5 @@ Partial Class Form1
     Friend WithEvents NuevoUsuarioToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MáquinasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GestiónDeMáquinasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents VerUsuarioToolStripMenuItem As ToolStripMenuItem
 End Class
