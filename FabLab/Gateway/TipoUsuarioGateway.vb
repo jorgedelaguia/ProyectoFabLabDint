@@ -163,9 +163,6 @@ Public Class TipoUsuarioGateway
         Return resultado
     End Function
 
-
-
-
     Public Function SeleccionarTodos() As DataTable
         Dim consulta As String = "SELECT * FROM TiposUsuario"
         Dim resultado As New DataTable

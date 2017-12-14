@@ -53,4 +53,23 @@ Public Class Form1
 
         nuevoUsuarioForm.Show()
     End Sub
+
+    Private Sub HorizontalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HorizontalToolStripMenuItem.Click
+        Me.LayoutMdi(MdiLayout.TileHorizontal)
+    End Sub
+
+    Private Sub VerticalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VerticalToolStripMenuItem.Click
+        Me.LayoutMdi(MdiLayout.TileVertical)
+    End Sub
+
+    Private Sub CascadaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CascadaToolStripMenuItem.Click
+        Me.LayoutMdi(MdiLayout.Cascade)
+    End Sub
+
+    Private Sub MinimizarTodasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MinimizarTodasToolStripMenuItem.Click
+        Dim i As Integer
+        For i = 0 To Me.MdiChildren.Length - 1
+            Me.MdiChildren(i).WindowState = FormWindowState.Minimized
+        Next
+    End Sub
 End Class

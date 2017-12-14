@@ -413,7 +413,7 @@ Partial Class FormUsuarios
         Me.ClientSize = New System.Drawing.Size(899, 530)
         Me.Controls.Add(Me.mainTableLayoutPanel)
         Me.Name = "FormUsuarios"
-        Me.Text = "FormUsuarios"
+        Me.Text = "FabLab - Usuarios"
         Me.mainTableLayoutPanel.ResumeLayout(False)
         Me.TableLayoutPanel4.ResumeLayout(False)
         Me.datosUsuarioTableLayoutPanel.ResumeLayout(False)

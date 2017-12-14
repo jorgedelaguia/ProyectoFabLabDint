@@ -15,7 +15,6 @@ Partial Class FormAcercaDe
     End Sub
 
     Friend WithEvents TableLayoutPanel As System.Windows.Forms.TableLayoutPanel
-    Friend WithEvents LogoPictureBox As System.Windows.Forms.PictureBox
     Friend WithEvents LabelProductName As System.Windows.Forms.Label
     Friend WithEvents LabelVersion As System.Windows.Forms.Label
     Friend WithEvents LabelCompanyName As System.Windows.Forms.Label
@@ -29,11 +28,9 @@ Partial Class FormAcercaDe
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormAcercaDe))
         Me.TableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
-        Me.LogoPictureBox = New System.Windows.Forms.PictureBox()
         Me.LabelProductName = New System.Windows.Forms.Label()
         Me.LabelVersion = New System.Windows.Forms.Label()
         Me.LabelCopyright = New System.Windows.Forms.Label()
@@ -41,9 +38,10 @@ Partial Class FormAcercaDe
         Me.aceptarButton = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.LogoPictureBox = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanel.SuspendLayout()
-        CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TableLayoutPanel
@@ -51,8 +49,8 @@ Partial Class FormAcercaDe
         Me.TableLayoutPanel.ColumnCount = 2
         Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.0!))
         Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.0!))
-        Me.TableLayoutPanel.Controls.Add(Me.LogoPictureBox, 0, 0)
         Me.TableLayoutPanel.Controls.Add(Me.LabelProductName, 1, 0)
+        Me.TableLayoutPanel.Controls.Add(Me.LogoPictureBox, 0, 0)
         Me.TableLayoutPanel.Controls.Add(Me.LabelVersion, 1, 1)
         Me.TableLayoutPanel.Controls.Add(Me.LabelCopyright, 1, 2)
         Me.TableLayoutPanel.Controls.Add(Me.LabelCompanyName, 1, 3)
@@ -68,20 +66,12 @@ Partial Class FormAcercaDe
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel.Size = New System.Drawing.Size(396, 258)
         Me.TableLayoutPanel.TabIndex = 0
-        '
-        'LogoPictureBox
-        '
-        Me.LogoPictureBox.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LogoPictureBox.Image = CType(resources.GetObject("LogoPictureBox.Image"), System.Drawing.Image)
-        Me.LogoPictureBox.Location = New System.Drawing.Point(3, 3)
-        Me.LogoPictureBox.Name = "LogoPictureBox"
-        Me.TableLayoutPanel.SetRowSpan(Me.LogoPictureBox, 6)
-        Me.LogoPictureBox.Size = New System.Drawing.Size(124, 252)
-        Me.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.LogoPictureBox.TabIndex = 0
-        Me.LogoPictureBox.TabStop = False
         '
         'LabelProductName
         '
@@ -161,6 +151,17 @@ Partial Class FormAcercaDe
     "odemos crear borrar y modificar usuarios y maquinas , además gestionar reservas " &
     "de las  para el uso de las maquinas"
         '
+        'LogoPictureBox
+        '
+        Me.LogoPictureBox.Image = Global.FabLab.My.Resources.Resources.Fab_Lab
+        Me.LogoPictureBox.Location = New System.Drawing.Point(3, 3)
+        Me.LogoPictureBox.Name = "LogoPictureBox"
+        Me.TableLayoutPanel.SetRowSpan(Me.LogoPictureBox, 6)
+        Me.LogoPictureBox.Size = New System.Drawing.Size(124, 121)
+        Me.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.LogoPictureBox.TabIndex = 0
+        Me.LogoPictureBox.TabStop = False
+        '
         'FormAcercaDe
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -175,14 +176,15 @@ Partial Class FormAcercaDe
         Me.Padding = New System.Windows.Forms.Padding(9)
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "Acerca de"
+        Me.Text = "FabLab - Acerca de"
         Me.TableLayoutPanel.ResumeLayout(False)
-        CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
+        CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents Panel1 As Panel
     Friend WithEvents RichTextBox1 As RichTextBox
+    Friend WithEvents LogoPictureBox As PictureBox
 End Class

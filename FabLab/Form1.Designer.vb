@@ -88,7 +88,7 @@ Partial Class Form1
         '
         Me.VentanaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OrganizarVentanasToolStripMenuItem, Me.MinimizarTodasToolStripMenuItem})
         Me.VentanaToolStripMenuItem.Name = "VentanaToolStripMenuItem"
-        Me.VentanaToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
+        Me.VentanaToolStripMenuItem.Size = New System.Drawing.Size(62, 20)
         Me.VentanaToolStripMenuItem.Text = "Ventana"
         '
         'OrganizarVentanasToolStripMenuItem
@@ -101,19 +101,19 @@ Partial Class Form1
         'HorizontalToolStripMenuItem
         '
         Me.HorizontalToolStripMenuItem.Name = "HorizontalToolStripMenuItem"
-        Me.HorizontalToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
+        Me.HorizontalToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.HorizontalToolStripMenuItem.Text = "Horizontal"
         '
         'VerticalToolStripMenuItem
         '
         Me.VerticalToolStripMenuItem.Name = "VerticalToolStripMenuItem"
-        Me.VerticalToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
+        Me.VerticalToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.VerticalToolStripMenuItem.Text = "Vertical"
         '
         'CascadaToolStripMenuItem
         '
         Me.CascadaToolStripMenuItem.Name = "CascadaToolStripMenuItem"
-        Me.CascadaToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
+        Me.CascadaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.CascadaToolStripMenuItem.Text = "Cascada"
         '
         'MinimizarTodasToolStripMenuItem
@@ -132,7 +132,7 @@ Partial Class Form1
         'AcercaDeToolStripMenuItem
         '
         Me.AcercaDeToolStripMenuItem.Name = "AcercaDeToolStripMenuItem"
-        Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
         Me.AcercaDeToolStripMenuItem.Text = "Acerca de"
         '
         'StatusStrip1
@@ -208,7 +208,7 @@ Partial Class Form1
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Text = "FabLab"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()

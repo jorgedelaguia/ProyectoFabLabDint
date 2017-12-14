@@ -155,7 +155,7 @@ Partial Class FormGestionUsuarios
         Me.ClientSize = New System.Drawing.Size(901, 440)
         Me.Controls.Add(Me.mainTableLayoutPanel)
         Me.Name = "FormGestionUsuarios"
-        Me.Text = "Gestion de usuarios"
+        Me.Text = "FabLab - Gestion de usuarios"
         Me.mainTableLayoutPanel.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)
         CType(Me.usuariosDataGridView, System.ComponentModel.ISupportInitialize).EndInit()

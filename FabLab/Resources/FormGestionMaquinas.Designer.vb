@@ -155,7 +155,7 @@ Partial Class FormGestionMaquinas
         Me.ClientSize = New System.Drawing.Size(889, 445)
         Me.Controls.Add(Me.mainTableLayoutPanel)
         Me.Name = "FormGestionMaquinas"
-        Me.Text = "FormGestionMaquinas"
+        Me.Text = "FabLab - GestionMaquinas"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.mainTableLayoutPanel.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)
