@@ -46,4 +46,11 @@ Public Class Form1
         form.MdiParent = Me
         form.Show()
     End Sub
+
+    Private Sub AcercaDeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AcercaDeToolStripMenuItem.Click
+        Dim nuevoUsuarioForm As New FormAcercaDe
+        nuevoUsuarioForm.MdiParent = Me
+
+        nuevoUsuarioForm.Show()
+    End Sub
 End Class

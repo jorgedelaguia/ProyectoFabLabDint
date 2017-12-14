@@ -104,6 +104,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Negocio\NegocioUsuarios.vb" />
+    <Compile Include="Resources\FormAcercaDe.Designer.vb">
+      <DependentUpon>FormAcercaDe.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\FormAcercaDe.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Resources\FormGestionMaquinas.Designer.vb">
       <DependentUpon>FormGestionMaquinas.vb</DependentUpon>
     </Compile>
@@ -132,6 +138,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\FormAcercaDe.resx">
+      <DependentUpon>FormAcercaDe.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\FormGestionMaquinas.resx">
       <DependentUpon>FormGestionMaquinas.vb</DependentUpon>

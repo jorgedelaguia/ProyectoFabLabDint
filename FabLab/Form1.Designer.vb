@@ -24,10 +24,8 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.UsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NuevoUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VerUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MáquinasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NuevaMaquinaToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.GestiónDeMáquinasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VentanaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OrganizarVentanasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -43,6 +41,8 @@ Partial Class Form1
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
+        Me.NuevoUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NuevaMaquinaToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
@@ -65,13 +65,6 @@ Partial Class Form1
         Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(64, 20)
         Me.UsuariosToolStripMenuItem.Text = "Usuarios"
         '
-        'NuevoUsuarioToolStripMenuItem
-        '
-        Me.NuevoUsuarioToolStripMenuItem.Image = Global.FabLab.My.Resources.Resources.user_comment
-        Me.NuevoUsuarioToolStripMenuItem.Name = "NuevoUsuarioToolStripMenuItem"
-        Me.NuevoUsuarioToolStripMenuItem.Size = New System.Drawing.Size(177, 22)
-        Me.NuevoUsuarioToolStripMenuItem.Text = "Nuevo usuario"
-        '
         'VerUsuarioToolStripMenuItem
         '
         Me.VerUsuarioToolStripMenuItem.Name = "VerUsuarioToolStripMenuItem"
@@ -84,13 +77,6 @@ Partial Class Form1
         Me.MáquinasToolStripMenuItem.Name = "MáquinasToolStripMenuItem"
         Me.MáquinasToolStripMenuItem.Size = New System.Drawing.Size(71, 20)
         Me.MáquinasToolStripMenuItem.Text = "Máquinas"
-        '
-        'NuevaMaquinaToolStripMenuItem1
-        '
-        Me.NuevaMaquinaToolStripMenuItem1.Image = Global.FabLab.My.Resources.Resources.machineryadd
-        Me.NuevaMaquinaToolStripMenuItem1.Name = "NuevaMaquinaToolStripMenuItem1"
-        Me.NuevaMaquinaToolStripMenuItem1.Size = New System.Drawing.Size(185, 22)
-        Me.NuevaMaquinaToolStripMenuItem1.Text = "Nueva máquina"
         '
         'GestiónDeMáquinasToolStripMenuItem
         '
@@ -146,7 +132,7 @@ Partial Class Form1
         'AcercaDeToolStripMenuItem
         '
         Me.AcercaDeToolStripMenuItem.Name = "AcercaDeToolStripMenuItem"
-        Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
+        Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.AcercaDeToolStripMenuItem.Text = "Acerca de"
         '
         'StatusStrip1
@@ -196,6 +182,20 @@ Partial Class Form1
         Me.ToolStripButton2.Name = "ToolStripButton2"
         Me.ToolStripButton2.Size = New System.Drawing.Size(23, 22)
         Me.ToolStripButton2.Text = "ToolStripButton2"
+        '
+        'NuevoUsuarioToolStripMenuItem
+        '
+        Me.NuevoUsuarioToolStripMenuItem.Image = Global.FabLab.My.Resources.Resources.user_comment
+        Me.NuevoUsuarioToolStripMenuItem.Name = "NuevoUsuarioToolStripMenuItem"
+        Me.NuevoUsuarioToolStripMenuItem.Size = New System.Drawing.Size(177, 22)
+        Me.NuevoUsuarioToolStripMenuItem.Text = "Nuevo usuario"
+        '
+        'NuevaMaquinaToolStripMenuItem1
+        '
+        Me.NuevaMaquinaToolStripMenuItem1.Image = Global.FabLab.My.Resources.Resources.machineryadd
+        Me.NuevaMaquinaToolStripMenuItem1.Name = "NuevaMaquinaToolStripMenuItem1"
+        Me.NuevaMaquinaToolStripMenuItem1.Size = New System.Drawing.Size(185, 22)
+        Me.NuevaMaquinaToolStripMenuItem1.Text = "Nueva máquina"
         '
         'Form1
         '
