@@ -18,6 +18,15 @@
         Return tabla
     End Function
 
+    Public Function VerTodosTipoUsuarios() As DataTable
+        Dim tabla As DataTable
+        Dim gateway As New TipoUsuarioGateway(My.Settings.cadena)
+
+        tabla = gateway.SeleccionarTodos()
+
+        Return tabla
+    End Function
+
     Public Function InsertarUsuario(ByVal nombre As String, ByVal apellidos As String, ByVal fecha_nacimiento As String, ByVal telefono As String, ByVal email As String, ByVal direccion As String, ByVal organizacion As String, ByVal tipo As Integer) As Integer
         Dim gateway As New UsuariosGateway(My.Settings.cadena)
         Dim filas As Integer

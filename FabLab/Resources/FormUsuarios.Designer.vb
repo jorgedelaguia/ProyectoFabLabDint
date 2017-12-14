@@ -64,7 +64,7 @@ Partial Class FormUsuarios
         '
         Me.nombreUsuarioLabel.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.nombreUsuarioLabel.AutoSize = True
-        Me.nombreUsuarioLabel.Location = New System.Drawing.Point(3, 36)
+        Me.nombreUsuarioLabel.Location = New System.Drawing.Point(3, 32)
         Me.nombreUsuarioLabel.Name = "nombreUsuarioLabel"
         Me.nombreUsuarioLabel.Size = New System.Drawing.Size(44, 13)
         Me.nombreUsuarioLabel.TabIndex = 0
@@ -74,7 +74,7 @@ Partial Class FormUsuarios
         '
         Me.telefonoUsuarioLabel.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.telefonoUsuarioLabel.AutoSize = True
-        Me.telefonoUsuarioLabel.Location = New System.Drawing.Point(3, 121)
+        Me.telefonoUsuarioLabel.Location = New System.Drawing.Point(3, 109)
         Me.telefonoUsuarioLabel.Name = "telefonoUsuarioLabel"
         Me.telefonoUsuarioLabel.Size = New System.Drawing.Size(49, 13)
         Me.telefonoUsuarioLabel.TabIndex = 1
@@ -84,7 +84,7 @@ Partial Class FormUsuarios
         '
         Me.organizacionUsuarioLabel.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.organizacionUsuarioLabel.AutoSize = True
-        Me.organizacionUsuarioLabel.Location = New System.Drawing.Point(3, 206)
+        Me.organizacionUsuarioLabel.Location = New System.Drawing.Point(3, 186)
         Me.organizacionUsuarioLabel.Name = "organizacionUsuarioLabel"
         Me.organizacionUsuarioLabel.Size = New System.Drawing.Size(69, 13)
         Me.organizacionUsuarioLabel.TabIndex = 2
@@ -94,7 +94,7 @@ Partial Class FormUsuarios
         '
         Me.fotoUsuarioLabel.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.fotoUsuarioLabel.AutoSize = True
-        Me.fotoUsuarioLabel.Location = New System.Drawing.Point(3, 14)
+        Me.fotoUsuarioLabel.Location = New System.Drawing.Point(3, 12)
         Me.fotoUsuarioLabel.Name = "fotoUsuarioLabel"
         Me.fotoUsuarioLabel.Size = New System.Drawing.Size(28, 13)
         Me.fotoUsuarioLabel.TabIndex = 3
@@ -104,7 +104,7 @@ Partial Class FormUsuarios
         '
         Me.apellidosUsuarioLabel.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.apellidosUsuarioLabel.AutoSize = True
-        Me.apellidosUsuarioLabel.Location = New System.Drawing.Point(373, 36)
+        Me.apellidosUsuarioLabel.Location = New System.Drawing.Point(274, 32)
         Me.apellidosUsuarioLabel.Name = "apellidosUsuarioLabel"
         Me.apellidosUsuarioLabel.Size = New System.Drawing.Size(49, 13)
         Me.apellidosUsuarioLabel.TabIndex = 4
@@ -114,7 +114,7 @@ Partial Class FormUsuarios
         '
         Me.emailUsuarioLabel.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.emailUsuarioLabel.AutoSize = True
-        Me.emailUsuarioLabel.Location = New System.Drawing.Point(373, 121)
+        Me.emailUsuarioLabel.Location = New System.Drawing.Point(274, 109)
         Me.emailUsuarioLabel.Name = "emailUsuarioLabel"
         Me.emailUsuarioLabel.Size = New System.Drawing.Size(35, 13)
         Me.emailUsuarioLabel.TabIndex = 5
@@ -124,7 +124,7 @@ Partial Class FormUsuarios
         '
         Me.tipoUsuarioLabel.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.tipoUsuarioLabel.AutoSize = True
-        Me.tipoUsuarioLabel.Location = New System.Drawing.Point(373, 206)
+        Me.tipoUsuarioLabel.Location = New System.Drawing.Point(274, 186)
         Me.tipoUsuarioLabel.Name = "tipoUsuarioLabel"
         Me.tipoUsuarioLabel.Size = New System.Drawing.Size(28, 13)
         Me.tipoUsuarioLabel.TabIndex = 6
@@ -134,9 +134,9 @@ Partial Class FormUsuarios
         '
         Me.fechaNacimientoUsuarioLabel.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.fechaNacimientoUsuarioLabel.AutoSize = True
-        Me.fechaNacimientoUsuarioLabel.Location = New System.Drawing.Point(743, 36)
+        Me.fechaNacimientoUsuarioLabel.Location = New System.Drawing.Point(545, 25)
         Me.fechaNacimientoUsuarioLabel.Name = "fechaNacimientoUsuarioLabel"
-        Me.fechaNacimientoUsuarioLabel.Size = New System.Drawing.Size(106, 13)
+        Me.fechaNacimientoUsuarioLabel.Size = New System.Drawing.Size(58, 26)
         Me.fechaNacimientoUsuarioLabel.TabIndex = 7
         Me.fechaNacimientoUsuarioLabel.Text = "Fecha de nacimiento"
         '
@@ -144,9 +144,9 @@ Partial Class FormUsuarios
         '
         Me.direccionPostalLabel.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.direccionPostalLabel.AutoSize = True
-        Me.direccionPostalLabel.Location = New System.Drawing.Point(743, 121)
+        Me.direccionPostalLabel.Location = New System.Drawing.Point(545, 102)
         Me.direccionPostalLabel.Name = "direccionPostalLabel"
-        Me.direccionPostalLabel.Size = New System.Drawing.Size(83, 13)
+        Me.direccionPostalLabel.Size = New System.Drawing.Size(55, 26)
         Me.direccionPostalLabel.TabIndex = 8
         Me.direccionPostalLabel.Text = "Direccion postal"
         '
@@ -154,7 +154,7 @@ Partial Class FormUsuarios
         '
         Me.observacionesUsuarioLabel.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.observacionesUsuarioLabel.AutoSize = True
-        Me.observacionesUsuarioLabel.Location = New System.Drawing.Point(573, 17)
+        Me.observacionesUsuarioLabel.Location = New System.Drawing.Point(422, 15)
         Me.observacionesUsuarioLabel.Name = "observacionesUsuarioLabel"
         Me.observacionesUsuarioLabel.Size = New System.Drawing.Size(78, 13)
         Me.observacionesUsuarioLabel.TabIndex = 9
@@ -163,16 +163,16 @@ Partial Class FormUsuarios
         'nombreUsuarioTextBox
         '
         Me.nombreUsuarioTextBox.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.nombreUsuarioTextBox.Location = New System.Drawing.Point(117, 32)
+        Me.nombreUsuarioTextBox.Location = New System.Drawing.Point(86, 28)
         Me.nombreUsuarioTextBox.Margin = New System.Windows.Forms.Padding(3, 3, 30, 3)
         Me.nombreUsuarioTextBox.Name = "nombreUsuarioTextBox"
-        Me.nombreUsuarioTextBox.Size = New System.Drawing.Size(223, 20)
+        Me.nombreUsuarioTextBox.Size = New System.Drawing.Size(155, 20)
         Me.nombreUsuarioTextBox.TabIndex = 10
         '
         'telefonoUsuarioTextBox
         '
         Me.telefonoUsuarioTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.telefonoUsuarioTextBox.Location = New System.Drawing.Point(117, 117)
+        Me.telefonoUsuarioTextBox.Location = New System.Drawing.Point(86, 105)
         Me.telefonoUsuarioTextBox.Name = "telefonoUsuarioTextBox"
         Me.telefonoUsuarioTextBox.Size = New System.Drawing.Size(94, 20)
         Me.telefonoUsuarioTextBox.TabIndex = 11
@@ -180,42 +180,43 @@ Partial Class FormUsuarios
         'organizacionUsuarioTextBox
         '
         Me.organizacionUsuarioTextBox.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.organizacionUsuarioTextBox.Location = New System.Drawing.Point(117, 202)
+        Me.organizacionUsuarioTextBox.Location = New System.Drawing.Point(86, 183)
         Me.organizacionUsuarioTextBox.Margin = New System.Windows.Forms.Padding(3, 3, 30, 3)
         Me.organizacionUsuarioTextBox.Name = "organizacionUsuarioTextBox"
-        Me.organizacionUsuarioTextBox.Size = New System.Drawing.Size(223, 20)
+        Me.organizacionUsuarioTextBox.Size = New System.Drawing.Size(155, 20)
         Me.organizacionUsuarioTextBox.TabIndex = 12
         '
         'apellidosUsuarioTextBox
         '
         Me.apellidosUsuarioTextBox.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.apellidosUsuarioTextBox.Location = New System.Drawing.Point(487, 32)
+        Me.apellidosUsuarioTextBox.Location = New System.Drawing.Point(357, 28)
         Me.apellidosUsuarioTextBox.Margin = New System.Windows.Forms.Padding(3, 3, 30, 3)
         Me.apellidosUsuarioTextBox.Name = "apellidosUsuarioTextBox"
-        Me.apellidosUsuarioTextBox.Size = New System.Drawing.Size(223, 20)
+        Me.apellidosUsuarioTextBox.Size = New System.Drawing.Size(155, 20)
         Me.apellidosUsuarioTextBox.TabIndex = 13
         '
         'emailUsuarioTextBox
         '
         Me.emailUsuarioTextBox.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.emailUsuarioTextBox.Location = New System.Drawing.Point(487, 117)
+        Me.emailUsuarioTextBox.Location = New System.Drawing.Point(357, 105)
         Me.emailUsuarioTextBox.Margin = New System.Windows.Forms.Padding(3, 3, 30, 3)
         Me.emailUsuarioTextBox.Name = "emailUsuarioTextBox"
-        Me.emailUsuarioTextBox.Size = New System.Drawing.Size(223, 20)
+        Me.emailUsuarioTextBox.Size = New System.Drawing.Size(155, 20)
         Me.emailUsuarioTextBox.TabIndex = 14
         '
         'direccionPostalUsuarioTextBox
         '
-        Me.direccionPostalUsuarioTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.direccionPostalUsuarioTextBox.Location = New System.Drawing.Point(857, 117)
+        Me.direccionPostalUsuarioTextBox.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.direccionPostalUsuarioTextBox.Location = New System.Drawing.Point(628, 105)
+        Me.direccionPostalUsuarioTextBox.Margin = New System.Windows.Forms.Padding(3, 3, 30, 3)
         Me.direccionPostalUsuarioTextBox.Name = "direccionPostalUsuarioTextBox"
-        Me.direccionPostalUsuarioTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.direccionPostalUsuarioTextBox.Size = New System.Drawing.Size(181, 20)
         Me.direccionPostalUsuarioTextBox.TabIndex = 15
         '
         'fechaNacimientoUsuarioDateTimePicker
         '
         Me.fechaNacimientoUsuarioDateTimePicker.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.fechaNacimientoUsuarioDateTimePicker.Location = New System.Drawing.Point(857, 32)
+        Me.fechaNacimientoUsuarioDateTimePicker.Location = New System.Drawing.Point(628, 28)
         Me.fechaNacimientoUsuarioDateTimePicker.Name = "fechaNacimientoUsuarioDateTimePicker"
         Me.fechaNacimientoUsuarioDateTimePicker.Size = New System.Drawing.Size(200, 20)
         Me.fechaNacimientoUsuarioDateTimePicker.TabIndex = 16
@@ -223,7 +224,7 @@ Partial Class FormUsuarios
         'examinarFotosButton
         '
         Me.examinarFotosButton.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.examinarFotosButton.Location = New System.Drawing.Point(54, 9)
+        Me.examinarFotosButton.Location = New System.Drawing.Point(54, 7)
         Me.examinarFotosButton.Name = "examinarFotosButton"
         Me.examinarFotosButton.Size = New System.Drawing.Size(75, 23)
         Me.examinarFotosButton.TabIndex = 17
@@ -233,26 +234,26 @@ Partial Class FormUsuarios
         'observacionesUsuarioTextBox
         '
         Me.observacionesUsuarioTextBox.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.observacionesUsuarioTextBox.Location = New System.Drawing.Point(573, 51)
+        Me.observacionesUsuarioTextBox.Location = New System.Drawing.Point(422, 46)
         Me.observacionesUsuarioTextBox.Multiline = True
         Me.observacionesUsuarioTextBox.Name = "observacionesUsuarioTextBox"
-        Me.observacionesUsuarioTextBox.Size = New System.Drawing.Size(564, 201)
+        Me.observacionesUsuarioTextBox.Size = New System.Drawing.Size(414, 183)
         Me.observacionesUsuarioTextBox.TabIndex = 18
         '
         'FlowLayoutPanel1
         '
         Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(3, 51)
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(3, 46)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(564, 201)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(413, 183)
         Me.FlowLayoutPanel1.TabIndex = 19
         '
         'aniadirTipoUsuarioButton
         '
         Me.aniadirTipoUsuarioButton.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.aniadirTipoUsuarioButton.Location = New System.Drawing.Point(171, 28)
+        Me.aniadirTipoUsuarioButton.Location = New System.Drawing.Point(125, 24)
         Me.aniadirTipoUsuarioButton.Name = "aniadirTipoUsuarioButton"
-        Me.aniadirTipoUsuarioButton.Size = New System.Drawing.Size(62, 23)
+        Me.aniadirTipoUsuarioButton.Size = New System.Drawing.Size(54, 23)
         Me.aniadirTipoUsuarioButton.TabIndex = 21
         Me.aniadirTipoUsuarioButton.Text = "Button1"
         Me.aniadirTipoUsuarioButton.UseVisualStyleBackColor = True
@@ -261,16 +262,16 @@ Partial Class FormUsuarios
         '
         Me.tipoUsuarioComboBox.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tipoUsuarioComboBox.FormattingEnabled = True
-        Me.tipoUsuarioComboBox.Location = New System.Drawing.Point(3, 29)
+        Me.tipoUsuarioComboBox.Location = New System.Drawing.Point(3, 25)
         Me.tipoUsuarioComboBox.Margin = New System.Windows.Forms.Padding(3, 3, 15, 3)
         Me.tipoUsuarioComboBox.Name = "tipoUsuarioComboBox"
-        Me.tipoUsuarioComboBox.Size = New System.Drawing.Size(150, 21)
+        Me.tipoUsuarioComboBox.Size = New System.Drawing.Size(104, 21)
         Me.tipoUsuarioComboBox.TabIndex = 22
         '
         'aceptarUsuarioButton
         '
         Me.aceptarUsuarioButton.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.aceptarUsuarioButton.Location = New System.Drawing.Point(21, 14)
+        Me.aceptarUsuarioButton.Location = New System.Drawing.Point(21, 12)
         Me.aceptarUsuarioButton.Name = "aceptarUsuarioButton"
         Me.aceptarUsuarioButton.Size = New System.Drawing.Size(75, 23)
         Me.aceptarUsuarioButton.TabIndex = 23
@@ -280,7 +281,7 @@ Partial Class FormUsuarios
         'cancelarUsuarioButton
         '
         Me.cancelarUsuarioButton.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.cancelarUsuarioButton.Location = New System.Drawing.Point(117, 14)
+        Me.cancelarUsuarioButton.Location = New System.Drawing.Point(117, 12)
         Me.cancelarUsuarioButton.Name = "cancelarUsuarioButton"
         Me.cancelarUsuarioButton.Size = New System.Drawing.Size(79, 23)
         Me.cancelarUsuarioButton.TabIndex = 24
@@ -301,7 +302,7 @@ Partial Class FormUsuarios
         Me.mainTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.0!))
         Me.mainTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.0!))
         Me.mainTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.mainTableLayoutPanel.Size = New System.Drawing.Size(1200, 580)
+        Me.mainTableLayoutPanel.Size = New System.Drawing.Size(899, 530)
         Me.mainTableLayoutPanel.TabIndex = 25
         '
         'TableLayoutPanel4
@@ -312,12 +313,12 @@ Partial Class FormUsuarios
         Me.TableLayoutPanel4.Controls.Add(Me.aceptarUsuarioButton, 0, 0)
         Me.TableLayoutPanel4.Controls.Add(Me.cancelarUsuarioButton, 1, 0)
         Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.TableLayoutPanel4.Location = New System.Drawing.Point(971, 525)
+        Me.TableLayoutPanel4.Location = New System.Drawing.Point(670, 479)
         Me.TableLayoutPanel4.Margin = New System.Windows.Forms.Padding(3, 3, 30, 3)
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
         Me.TableLayoutPanel4.RowCount = 1
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(199, 52)
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(199, 48)
         Me.TableLayoutPanel4.TabIndex = 3
         '
         'datosUsuarioTableLayoutPanel
@@ -353,7 +354,7 @@ Partial Class FormUsuarios
         Me.datosUsuarioTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.datosUsuarioTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.datosUsuarioTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.datosUsuarioTableLayoutPanel.Size = New System.Drawing.Size(1140, 255)
+        Me.datosUsuarioTableLayoutPanel.Size = New System.Drawing.Size(839, 232)
         Me.datosUsuarioTableLayoutPanel.TabIndex = 2
         '
         'TableLayoutPanel6
@@ -364,11 +365,11 @@ Partial Class FormUsuarios
         Me.TableLayoutPanel6.Controls.Add(Me.tipoUsuarioComboBox, 0, 0)
         Me.TableLayoutPanel6.Controls.Add(Me.aniadirTipoUsuarioButton, 1, 0)
         Me.TableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel6.Location = New System.Drawing.Point(487, 173)
+        Me.TableLayoutPanel6.Location = New System.Drawing.Point(357, 157)
         Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
         Me.TableLayoutPanel6.RowCount = 1
         Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel6.Size = New System.Drawing.Size(250, 79)
+        Me.TableLayoutPanel6.Size = New System.Drawing.Size(182, 72)
         Me.TableLayoutPanel6.TabIndex = 17
         '
         'fotosObservacionesTableLayoutPanel
@@ -381,13 +382,13 @@ Partial Class FormUsuarios
         Me.fotosObservacionesTableLayoutPanel.Controls.Add(Me.FlowLayoutPanel1, 0, 1)
         Me.fotosObservacionesTableLayoutPanel.Controls.Add(Me.TableLayoutPanel5, 0, 0)
         Me.fotosObservacionesTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.fotosObservacionesTableLayoutPanel.Location = New System.Drawing.Point(30, 264)
+        Me.fotosObservacionesTableLayoutPanel.Location = New System.Drawing.Point(30, 241)
         Me.fotosObservacionesTableLayoutPanel.Margin = New System.Windows.Forms.Padding(30, 3, 30, 3)
         Me.fotosObservacionesTableLayoutPanel.Name = "fotosObservacionesTableLayoutPanel"
         Me.fotosObservacionesTableLayoutPanel.RowCount = 2
         Me.fotosObservacionesTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.95425!))
         Me.fotosObservacionesTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 81.04575!))
-        Me.fotosObservacionesTableLayoutPanel.Size = New System.Drawing.Size(1140, 255)
+        Me.fotosObservacionesTableLayoutPanel.Size = New System.Drawing.Size(839, 232)
         Me.fotosObservacionesTableLayoutPanel.TabIndex = 1
         '
         'TableLayoutPanel5
@@ -402,14 +403,14 @@ Partial Class FormUsuarios
         Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
         Me.TableLayoutPanel5.RowCount = 1
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel5.Size = New System.Drawing.Size(166, 42)
+        Me.TableLayoutPanel5.Size = New System.Drawing.Size(166, 37)
         Me.TableLayoutPanel5.TabIndex = 20
         '
         'FormUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1200, 580)
+        Me.ClientSize = New System.Drawing.Size(899, 530)
         Me.Controls.Add(Me.mainTableLayoutPanel)
         Me.Name = "FormUsuarios"
         Me.Text = "FormUsuarios"

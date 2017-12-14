@@ -68,9 +68,19 @@
 
         organizacionUsuarioTextBox.Text = tabla.Rows(0).Item("organizacion").ToString
 
-        Dim tablaTipoUsuario As DataTable = NegocioUsuarios.VerTipoUsuario(Integer.Parse(tabla.Rows(0).Item("tipo").ToString))
-        tipoUsuarioComboBox.Items.Add(tablaTipoUsuario.Rows(0).Item("tipo").ToString)
-        tipoUsuarioComboBox.SelectedIndex = 0
+        'Dim tablaTipoUsuario As DataTable = NegocioUsuarios.VerTipoUsuario(Integer.Parse(tabla.Rows(0).Item("tipo").ToString))
+        'tipoUsuarioComboBox.Items.Add(tablaTipoUsuario.Rows(0).Item("tipo").ToString)
+        'tipoUsuarioComboBox.SelectedIndex = 0
+
+        Dim tablaTipoUsuario As DataTable = NegocioUsuarios.VerTodosTipoUsuarios()
+
+
+
+        For i As Integer = 0 To tablaTipoUsuario.Rows.Count - 1
+            tipoUsuarioComboBox.Items.Add(tablaTipoUsuario.Rows(i).Item("tipo").ToString)
+        Next
+
+        tipoUsuarioComboBox.SelectedIndex = Integer.Parse(tabla.Rows(0).Item("tipo").ToString) - 1
     End Sub
 
     Private Sub ModificarDatosUsuario()
@@ -88,7 +98,7 @@
                                                      emailUsuarioTextBox.Text.Trim,
                                                      direccionPostalUsuarioTextBox.Text.Trim,
                                                      organizacionUsuarioTextBox.Text.Trim,
-                                                     1)
+                                                     tipoUsuarioComboBox.SelectedIndex + 1)
 
 
             If filas > 0 Then
@@ -118,6 +128,7 @@
             Dim fecha As String = tabla.Rows(0).Item("fecha_nacimiento").ToString
             Dim fechas As String() = fecha.Split("/"c)
             Dim anio As Integer = Integer.Parse(fechas(2).Substring(0, 4))
+
 
             fechaNacimientoUsuarioDateTimePicker.Enabled = False
             fechaNacimientoUsuarioDateTimePicker.Value = New Date(anio, Integer.Parse(fechas(1)), Integer.Parse(fechas(0)))
@@ -158,4 +169,7 @@
 
     End Sub
 
+    Private Sub cancelarUsuarioButton_Click(sender As Object, e As EventArgs) Handles cancelarUsuarioButton.Click
+        Close()
+    End Sub
 End Class

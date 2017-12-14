@@ -142,14 +142,39 @@ Public Class TipoUsuarioGateway
             Throw New ArgumentException("El id no puede estar vacio")
         End If
 
-
-
         'Ejecutar
         Try
             conexion.Open()
             comando.CommandText = consulta
             comando.Parameters.Add("@id", SqlDbType.Int)
             comando.Parameters("@id").Value = id
+            lector = comando.ExecuteReader()
+
+            resultado.Load(lector)
+
+        Catch ex As Exception
+            Throw New Exception(ex.Message, ex)
+        Finally
+            If (conexion IsNot Nothing) Then
+                conexion.Close()
+            End If
+        End Try
+
+        Return resultado
+    End Function
+
+
+
+
+    Public Function SeleccionarTodos() As DataTable
+        Dim consulta As String = "SELECT * FROM TiposUsuario"
+        Dim resultado As New DataTable
+        Dim lector As SqlDataReader
+
+        'Ejecutar
+        Try
+            conexion.Open()
+            comando.CommandText = consulta
             lector = comando.ExecuteReader()
 
             resultado.Load(lector)
