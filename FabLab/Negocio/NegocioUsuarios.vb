@@ -9,6 +9,15 @@
         Return tabla
     End Function
 
+    Public Function InsertarTipoUsuario(ByVal nombre As String) As Integer
+        Dim gateway As New TipoUsuarioGateway(My.Settings.cadena)
+        Dim filas As Integer
+
+        filas = gateway.Insertar(nombre)
+
+        Return filas
+    End Function
+
     Public Function VerTipoUsuario(ByVal id As Integer) As DataTable
         Dim tabla As DataTable
         Dim gateway As New TipoUsuarioGateway(My.Settings.cadena)

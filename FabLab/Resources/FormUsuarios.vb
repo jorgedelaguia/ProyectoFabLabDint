@@ -14,14 +14,25 @@
             VerDatosUsuario()
         ElseIf tipo = TipoForm.Modificar Then
             VerDatosModificarUsuario()
+        ElseIf tipo = TipoForm.Insertar Then
+            VerTiposUsuarios()
         End If
 
+    End Sub
+
+    Private Sub VerTiposUsuarios()
+        Dim tablaTipoUsuario As DataTable = NegocioUsuarios.VerTodosTipoUsuarios()
+
+        tipoUsuarioComboBox.Items.Clear()
+
+        For i As Integer = 0 To tablaTipoUsuario.Rows.Count - 1
+            tipoUsuarioComboBox.Items.Add(tablaTipoUsuario.Rows(i).Item("tipo").ToString)
+        Next
     End Sub
 
     Private Sub InsertarDatosUsuario()
 
         Try
-            Debug.WriteLine(fechaNacimientoUsuarioDateTimePicker.Value.ToString, "Test fecha")
             Dim filas As Integer
 
             filas = NegocioUsuarios.InsertarUsuario(nombreUsuarioTextBox.Text.Trim,
@@ -31,13 +42,12 @@
                                             emailUsuarioTextBox.Text.Trim,
                                             direccionPostalUsuarioTextBox.Text.Trim,
                                             organizacionUsuarioTextBox.Text.Trim,
-                                            1)
+                                            tipoUsuarioComboBox.SelectedIndex + 1)
 
 
             If filas > 0 Then
                 MessageBox.Show("Se han insertado " & filas & " usuarios.", "Insertado con exito", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
-
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -72,13 +82,7 @@
         'tipoUsuarioComboBox.Items.Add(tablaTipoUsuario.Rows(0).Item("tipo").ToString)
         'tipoUsuarioComboBox.SelectedIndex = 0
 
-        Dim tablaTipoUsuario As DataTable = NegocioUsuarios.VerTodosTipoUsuarios()
-
-
-
-        For i As Integer = 0 To tablaTipoUsuario.Rows.Count - 1
-            tipoUsuarioComboBox.Items.Add(tablaTipoUsuario.Rows(i).Item("tipo").ToString)
-        Next
+        VerTiposUsuarios()
 
         tipoUsuarioComboBox.SelectedIndex = Integer.Parse(tabla.Rows(0).Item("tipo").ToString) - 1
     End Sub
@@ -171,5 +175,23 @@
 
     Private Sub cancelarUsuarioButton_Click(sender As Object, e As EventArgs) Handles cancelarUsuarioButton.Click
         Close()
+    End Sub
+
+    Private Sub aniadirTipoUsuarioButton_Click(sender As Object, e As EventArgs) Handles aniadirTipoUsuarioButton.Click
+        Try
+            Debug.WriteLine(fechaNacimientoUsuarioDateTimePicker.Value.ToString, "Test fecha")
+            Dim filas As Integer
+
+            filas = NegocioUsuarios.InsertarTipoUsuario(tipoUsuarioComboBox.Text.Trim)
+
+
+            If filas > 0 Then
+                MessageBox.Show("Se han insertado " & filas & " tipo de usuario.", "Insertado con exito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+
+            VerTiposUsuarios()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 End Class

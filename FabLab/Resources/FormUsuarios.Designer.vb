@@ -42,7 +42,6 @@ Partial Class FormUsuarios
         Me.examinarFotosButton = New System.Windows.Forms.Button()
         Me.observacionesUsuarioTextBox = New System.Windows.Forms.TextBox()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.aniadirTipoUsuarioButton = New System.Windows.Forms.Button()
         Me.tipoUsuarioComboBox = New System.Windows.Forms.ComboBox()
         Me.aceptarUsuarioButton = New System.Windows.Forms.Button()
         Me.cancelarUsuarioButton = New System.Windows.Forms.Button()
@@ -52,6 +51,7 @@ Partial Class FormUsuarios
         Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
         Me.fotosObservacionesTableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
+        Me.aniadirTipoUsuarioButton = New System.Windows.Forms.Button()
         Me.mainTableLayoutPanel.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
         Me.datosUsuarioTableLayoutPanel.SuspendLayout()
@@ -248,16 +248,6 @@ Partial Class FormUsuarios
         Me.FlowLayoutPanel1.Size = New System.Drawing.Size(413, 183)
         Me.FlowLayoutPanel1.TabIndex = 19
         '
-        'aniadirTipoUsuarioButton
-        '
-        Me.aniadirTipoUsuarioButton.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.aniadirTipoUsuarioButton.Location = New System.Drawing.Point(125, 24)
-        Me.aniadirTipoUsuarioButton.Name = "aniadirTipoUsuarioButton"
-        Me.aniadirTipoUsuarioButton.Size = New System.Drawing.Size(54, 23)
-        Me.aniadirTipoUsuarioButton.TabIndex = 21
-        Me.aniadirTipoUsuarioButton.Text = "Button1"
-        Me.aniadirTipoUsuarioButton.UseVisualStyleBackColor = True
-        '
         'tipoUsuarioComboBox
         '
         Me.tipoUsuarioComboBox.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -405,6 +395,16 @@ Partial Class FormUsuarios
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel5.Size = New System.Drawing.Size(166, 37)
         Me.TableLayoutPanel5.TabIndex = 20
+        '
+        'aniadirTipoUsuarioButton
+        '
+        Me.aniadirTipoUsuarioButton.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.aniadirTipoUsuarioButton.Image = Global.FabLab.My.Resources.Resources.add
+        Me.aniadirTipoUsuarioButton.Location = New System.Drawing.Point(125, 24)
+        Me.aniadirTipoUsuarioButton.Name = "aniadirTipoUsuarioButton"
+        Me.aniadirTipoUsuarioButton.Size = New System.Drawing.Size(30, 23)
+        Me.aniadirTipoUsuarioButton.TabIndex = 21
+        Me.aniadirTipoUsuarioButton.UseVisualStyleBackColor = True
         '
         'FormUsuarios
         '

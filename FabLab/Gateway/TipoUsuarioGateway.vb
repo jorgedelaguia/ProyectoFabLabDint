@@ -27,10 +27,10 @@ Public Class TipoUsuarioGateway
 
         Dim filas As Integer
 
-        Dim consulta As String = "INSERT INTO TipoUsuarios(tipo) values ('@tipo')"
+        Dim consulta As String = "INSERT INTO TiposUsuario(tipo) values (@tipo)"
 
         'Validar
-        If tipo = "" Or Not IsNothing(tipo) Then
+        If tipo = "" Or IsNothing(tipo) Then
             Throw New ArgumentException("El tipo no puede se null/vacio")
         End If
 
