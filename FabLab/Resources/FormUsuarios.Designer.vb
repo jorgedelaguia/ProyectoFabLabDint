@@ -49,9 +49,10 @@ Partial Class FormUsuarios
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.datosUsuarioTableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
+        Me.aniadirTipoUsuarioButton = New System.Windows.Forms.Button()
         Me.fotosObservacionesTableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
-        Me.aniadirTipoUsuarioButton = New System.Windows.Forms.Button()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.mainTableLayoutPanel.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
         Me.datosUsuarioTableLayoutPanel.SuspendLayout()
@@ -362,6 +363,16 @@ Partial Class FormUsuarios
         Me.TableLayoutPanel6.Size = New System.Drawing.Size(182, 72)
         Me.TableLayoutPanel6.TabIndex = 17
         '
+        'aniadirTipoUsuarioButton
+        '
+        Me.aniadirTipoUsuarioButton.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.aniadirTipoUsuarioButton.Image = Global.FabLab.My.Resources.Resources.add
+        Me.aniadirTipoUsuarioButton.Location = New System.Drawing.Point(125, 24)
+        Me.aniadirTipoUsuarioButton.Name = "aniadirTipoUsuarioButton"
+        Me.aniadirTipoUsuarioButton.Size = New System.Drawing.Size(30, 23)
+        Me.aniadirTipoUsuarioButton.TabIndex = 21
+        Me.aniadirTipoUsuarioButton.UseVisualStyleBackColor = True
+        '
         'fotosObservacionesTableLayoutPanel
         '
         Me.fotosObservacionesTableLayoutPanel.ColumnCount = 2
@@ -396,15 +407,9 @@ Partial Class FormUsuarios
         Me.TableLayoutPanel5.Size = New System.Drawing.Size(166, 37)
         Me.TableLayoutPanel5.TabIndex = 20
         '
-        'aniadirTipoUsuarioButton
+        'OpenFileDialog1
         '
-        Me.aniadirTipoUsuarioButton.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.aniadirTipoUsuarioButton.Image = Global.FabLab.My.Resources.Resources.add
-        Me.aniadirTipoUsuarioButton.Location = New System.Drawing.Point(125, 24)
-        Me.aniadirTipoUsuarioButton.Name = "aniadirTipoUsuarioButton"
-        Me.aniadirTipoUsuarioButton.Size = New System.Drawing.Size(30, 23)
-        Me.aniadirTipoUsuarioButton.TabIndex = 21
-        Me.aniadirTipoUsuarioButton.UseVisualStyleBackColor = True
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
         'FormUsuarios
         '
@@ -457,4 +462,5 @@ Partial Class FormUsuarios
     Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel5 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel6 As TableLayoutPanel
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
 End Class

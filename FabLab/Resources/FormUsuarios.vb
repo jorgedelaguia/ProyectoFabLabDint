@@ -8,14 +8,18 @@
 
     Public tipo As TipoForm
     Public usuario As Integer
+    Private rutaFotos As String()
     Private Sub FormUsuarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         If tipo = TipoForm.Consultar Then
             VerDatosUsuario()
+            RellenaFotos(usuario)
         ElseIf tipo = TipoForm.Modificar Then
             VerDatosModificarUsuario()
+            RellenaFotos(usuario)
         ElseIf tipo = TipoForm.Insertar Then
             VerTiposUsuarios()
+
         End If
 
     End Sub
@@ -37,7 +41,7 @@
 
             filas = NegocioUsuarios.InsertarUsuario(nombreUsuarioTextBox.Text.Trim,
                                             apellidosUsuarioTextBox.Text.Trim,
-                                            fechaNacimientoUsuarioDateTimePicker.Value.ToString,
+                                            fechaNacimientoUsuarioDateTimePicker.Value,
                                             telefonoUsuarioTextBox.Text.Trim,
                                             emailUsuarioTextBox.Text.Trim,
                                             direccionPostalUsuarioTextBox.Text.Trim,
@@ -48,6 +52,10 @@
             If filas > 0 Then
                 MessageBox.Show("Se han insertado " & filas & " usuarios.", "Insertado con exito", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
+
+            MoverFotos(rutaFotos, UltimoUsuarioID())
+
+
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -157,6 +165,9 @@
             'FIXME: falta el campo observaciones en la tabla Usuarios
             observacionesUsuarioTextBox.Enabled = False
 
+
+            examinarFotosButton.Enabled = False
+            aniadirTipoUsuarioButton.Enabled = False
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -165,6 +176,7 @@
     Private Sub aceptarUsuarioButton_Click(sender As Object, e As EventArgs) Handles aceptarUsuarioButton.Click
         If tipo = TipoForm.Insertar Then
             InsertarDatosUsuario()
+
         ElseIf tipo = TipoForm.Modificar Then
             ModificarDatosUsuario()
         End If
@@ -193,5 +205,52 @@
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+    End Sub
+
+    Private Sub examinarFotosButton_Click(sender As Object, e As EventArgs) Handles examinarFotosButton.Click
+        OpenFileDialog1.Multiselect = True
+        If OpenFileDialog1.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
+
+            Dim fotos As String() = OpenFileDialog1.FileNames
+
+            FotosInsertarEnFlowPanel(fotos)
+            rutaFotos = fotos
+        End If
+    End Sub
+
+    Private Sub FotosInsertarEnFlowPanel(ByVal fotos As String())
+        For index As Integer = 0 To fotos.Count - 1
+            Dim imagen As New PictureBox()
+            imagen.ImageLocation = fotos(index)
+            imagen.Height = 96
+            imagen.Width = 96
+            imagen.SizeMode = PictureBoxSizeMode.StretchImage
+            FlowLayoutPanel1.Controls.Add(imagen)
+        Next
+    End Sub
+
+    Private Sub MoverFotos(ByVal archivos As String(), ByVal id As Integer)
+        'System.IO.File.Copy(ruta, My.Settings.DirectorioImagenesUsuario & "a")
+        System.IO.Directory.CreateDirectory(My.Settings.DirectorioImagenesUsuario)
+
+
+        For counter As Integer = 0 To archivos.Count - 1
+            Dim archivo As String() = Split(archivos(counter), "\"c)
+            System.IO.File.Copy(archivos(counter), My.Settings.DirectorioImagenesUsuario & "usuario" & id & "_" & counter & "." & archivo(archivo.Count - 1).Split("."c)(1))
+        Next
+
+    End Sub
+
+    Private Sub RellenaFotos(ByVal id As Integer)
+        Dim fotos As String() = System.IO.Directory.GetFiles(My.Settings.DirectorioImagenesUsuario, "usuario" & id & "*")
+
+        For index As Integer = 0 To fotos.Count - 1
+            Dim imagen As New PictureBox()
+            imagen.ImageLocation = fotos(index)
+            imagen.Height = 96
+            imagen.Width = 96
+            imagen.SizeMode = PictureBoxSizeMode.StretchImage
+            FlowLayoutPanel1.Controls.Add(imagen)
+        Next
     End Sub
 End Class

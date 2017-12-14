@@ -42,12 +42,27 @@ Public Class UsuariosGateway
     ''' <param name="organizacion">Organización</param>
     ''' <param name="tipoUsuario">Tipo usuario</param>
     ''' <returns></returns>
-    Public Function Insertar(nombre As String, apellidos As String, fechaNacimiento As String, telefono As String, email As String, direccion As String, organizacion As String, tipoUsuario As Integer, fecha_alta As String) As Integer
+    Public Function Insertar(nombre As String, apellidos As String, fechaNacimiento As Date, telefono As String, email As String, direccion As String, organizacion As String, tipoUsuario As Integer, fecha_alta As Date) As Integer
 
         Dim filas As Integer
 
         'FIXME: usar parametros del objeto Command pdf ut3_ado pag 9
-        Dim consulta As String = "INSERT INTO Usuarios(nombre, apellidos, fecha_nacimiento, telefono, email, direccion, organizacion, tipo, fecha_alta) VALUES ('" & nombre & "', '" & apellidos & "', '" & fechaNacimiento & "', '" & telefono & "', '" & email & "', '" & direccion & "', '" & organizacion & "', '" & tipoUsuario & "', '" & fecha_alta & "')"
+        Dim consulta As String = "INSERT INTO Usuarios(nombre, 
+                                                        apellidos, 
+                                                        fecha_nacimiento, 
+                                                        telefono, email, 
+                                                        direccion, 
+                                                        organizacion, 
+                                                        tipo, 
+                                                        fecha_alta) VALUES (@nombre,
+                                                                            @apellidos,
+                                                                            @fechaNacimiento,
+                                                                            @telefono,
+                                                                            @email,
+                                                                            @direccion,
+                                                                            @organizacion,
+                                                                            @tipoUsuario,
+                                                                            @fecha_alta)"
 
         'validar datos
         If nombre = "" Or nombre Is Nothing Then
@@ -58,9 +73,9 @@ Public Class UsuariosGateway
             Throw New ArgumentException("El apellido no puede se null/vacio")
         End If
 
-        If fechaNacimiento = "" Or fechaNacimiento Is Nothing Then
-            Throw New ArgumentException("El fecha de nacimiento no puede se null/vacio")
-        End If
+        'If fechaNacimiento = "" Or fechaNacimiento Is Nothing Then
+        '    Throw New ArgumentException("El fecha de nacimiento no puede se null/vacio")
+        'End If
 
         'If IsNumeric(tipoUsuario) Or Not IsNothing(tipoUsuario) Then
         If IsNothing(tipoUsuario) Then
@@ -71,6 +86,29 @@ Public Class UsuariosGateway
         Try
             conexion.Open()
             comando.CommandText = consulta
+            'comando.Parameters.Add("@id", SqlDbType.Int)
+            comando.Parameters.Add("@nombre", SqlDbType.VarChar)
+            comando.Parameters.Add("@apellidos", SqlDbType.VarChar)
+            comando.Parameters.Add("@fechaNacimiento", SqlDbType.Date)
+            comando.Parameters.Add("@telefono", SqlDbType.VarChar)
+            comando.Parameters.Add("@email", SqlDbType.VarChar)
+            comando.Parameters.Add("@direccion", SqlDbType.VarChar)
+            comando.Parameters.Add("@organizacion", SqlDbType.VarChar)
+            comando.Parameters.Add("@tipoUsuario", SqlDbType.Int)
+            comando.Parameters.Add("@fecha_alta", SqlDbType.Date)
+
+
+            'comando.Parameters("@id").Value = id
+            comando.Parameters("@nombre").Value = nombre
+            comando.Parameters("@apellidos").Value = apellidos
+            comando.Parameters("@fechaNacimiento").Value = fechaNacimiento
+            comando.Parameters("@telefono").Value = telefono
+            comando.Parameters("@email").Value = email
+            comando.Parameters("@direccion").Value = direccion
+            comando.Parameters("@organizacion").Value = organizacion
+            comando.Parameters("@tipoUsuario").Value = tipoUsuario
+            comando.Parameters("@fecha_alta").Value = fecha_alta
+
             filas = comando.ExecuteNonQuery()
         Catch ex As Exception
             Throw New Exception(ex.Message, ex)
@@ -185,8 +223,6 @@ Public Class UsuariosGateway
             Throw New ArgumentException("El id no puede estar vacio")
         End If
 
-
-
         'Ejecutar
         Try
             conexion.Open()
@@ -208,4 +244,31 @@ Public Class UsuariosGateway
         Return resultado
     End Function
 
+
+    Public Function ObtenerIdUltimoUsuario() As Integer
+        Dim consulta As String = "select id from Usuarios where id = (select max(id) from Usuarios)"
+        Dim resultado As New DataTable
+        Dim lector As SqlDataReader
+
+
+
+        'Ejecutar
+        Try
+            conexion.Open()
+            comando.CommandText = consulta
+
+            lector = comando.ExecuteReader()
+
+            resultado.Load(lector)
+
+        Catch ex As Exception
+            Throw New Exception(ex.Message, ex)
+        Finally
+            If (conexion IsNot Nothing) Then
+                conexion.Close()
+            End If
+        End Try
+
+        Return Integer.Parse(resultado.Rows(0).Item("id").ToString)
+    End Function
 End Class

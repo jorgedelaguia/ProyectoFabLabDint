@@ -15,7 +15,7 @@ Public Class FormGestionMaquinas
         Dim nuevoUsuarioForm As New FormUsuarios
         nuevoUsuarioForm.tipo = TipoForm.Consultar
         nuevoUsuarioForm.MdiParent = Form1
-        nuevoUsuarioForm.usuario = 1
+        nuevoUsuarioForm.usuario = 11
         nuevoUsuarioForm.Show()
     End Sub
 
