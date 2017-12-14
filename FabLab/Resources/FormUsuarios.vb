@@ -140,6 +140,7 @@
             telefonoUsuarioTextBox.Enabled = False
             telefonoUsuarioTextBox.Text = tabla.Rows(0).Item("telefono").ToString
 
+
             emailUsuarioTextBox.Enabled = False
             emailUsuarioTextBox.Text = tabla.Rows(0).Item("email").ToString
 
