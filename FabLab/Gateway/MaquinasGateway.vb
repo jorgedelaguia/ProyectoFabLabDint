@@ -1,10 +1,19 @@
 ﻿Imports System.Data.SqlClient
-
+''' <summary>
+''' Clase para definir los gateways de Maquinas
+''' </summary>
 Public Class MaquinasGateway
-
+    ''' <summary>
+    ''' Almacena el objeto Connection
+    ''' </summary>
     Private conexion As SqlConnection
+    ''' <summary>
+    ''' Almacena el objeto Command
+    ''' </summary>
     Private comando As SqlCommand
-
+    ''' <summary>
+    ''' Constructor: crea el objeto de aceso a la base de datos
+    ''' </summary>
     Public Sub New(ByRef cadenaConexion As String)
         conexion = New SqlConnection(cadenaConexion)
         comando = New SqlCommand()

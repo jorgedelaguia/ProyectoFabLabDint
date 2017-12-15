@@ -12,21 +12,21 @@ Public Class FormGestionMaquinas
     End Sub
 
     Private Sub consultarMaquinaButton_Click(sender As Object, e As EventArgs) Handles consultarMaquinaButton.Click
-        Dim nuevoUsuarioForm As New FormMaquinas
-        nuevoUsuarioForm.tipo = FormMaquinas.TipoForm.Consultar
-        nuevoUsuarioForm.MdiParent = Form1
+        Dim nuevoMaquinaForm As New FormMaquinas
+        nuevoMaquinaForm.tipo = FormMaquinas.TipoForm.Consultar
+        nuevoMaquinaForm.MdiParent = Form1
 
 
-        nuevoUsuarioForm.maquina = CType(DataGridView1.Item(0, DataGridView1.CurrentRow.Index).Value, Integer)
-        nuevoUsuarioForm.Show()
+        nuevoMaquinaForm.maquina = CType(DataGridView1.Item(0, DataGridView1.CurrentRow.Index).Value, Integer)
+        nuevoMaquinaForm.Show()
     End Sub
 
     Private Sub editarMaquinaButton_Click(sender As Object, e As EventArgs) Handles editarMaquinaButton.Click
-        Dim nuevoUsuarioForm As New FormMaquinas
-        nuevoUsuarioForm.tipo = FormMaquinas.TipoForm.Modificar
-        nuevoUsuarioForm.MdiParent = Form1
-        nuevoUsuarioForm.maquina = CType(DataGridView1.Item(0, DataGridView1.CurrentRow.Index).Value, Integer)
-        nuevoUsuarioForm.Show()
+        Dim nuevoMaquinaForm As New FormMaquinas
+        nuevoMaquinaForm.tipo = FormMaquinas.TipoForm.Modificar
+        nuevoMaquinaForm.MdiParent = Form1
+        nuevoMaquinaForm.maquina = CType(DataGridView1.Item(0, DataGridView1.CurrentRow.Index).Value, Integer)
+        nuevoMaquinaForm.Show()
     End Sub
 
     Private Sub FormGestionMaquinas_Load(sender As Object, e As EventArgs) Handles MyBase.Load, buscarMaquinaTextBox.TextChanged

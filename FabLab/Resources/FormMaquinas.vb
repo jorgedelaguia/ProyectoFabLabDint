@@ -9,7 +9,7 @@
     Public tipo As TipoForm
     Public maquina As Integer
 
-    Private Sub FormUsuarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub FormMaquinas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         If tipo = TipoForm.Consultar Then
             VerDatosMaquina()
@@ -40,7 +40,7 @@
 
 
         If filas > 0 Then
-            MessageBox.Show("Se han insertado " & filas & " tipo de usuario.", "Insertado con exito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Se han insertado " & filas & " tipo de maquina.", "Insertado con exito", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
 
         VerTiposMaquinas()
@@ -102,7 +102,6 @@
 
             fechaCompraMaquinaDateTimePicker.Value = New Date(anio, Integer.Parse(fechas(1)), Integer.Parse(fechas(0)))
 
-            'TODO falta la fechaCompra
 
             Dim tablaTipoMaquina As DataTable = NegocioMaquinas.VerTipoMaquina(Integer.Parse(tabla.Rows(0).Item("tipo").ToString))
 
@@ -152,7 +151,7 @@
     End Sub
 
     Private Sub VerDatosModificarMaquinas()
-        'Carga los datos del usuario para modificarlos
+
         Dim tabla As DataTable = NegocioMaquinas.VerDatosMaquinas(maquina)
 
         modeloMaquinaTextBox.Text = tabla.Rows(0).Item("modelo").ToString
