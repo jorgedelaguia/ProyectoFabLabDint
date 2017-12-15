@@ -150,17 +150,18 @@ Public Class MaquinasGateway
         Return resultado
     End Function
 
-    Public Function SeleccionarTodasMaquinas() As DataTable
-        Dim consulta As String = "SELECT * FROM Maquinas"
-        Dim resultado As New DataTable
-        Dim lector As SqlDataReader
+    Public Function SeleccionarTodasMaquinas() As BindingSource
+        Dim enlace As BindingSource
+
 
         Try
-            conexion.Open()
-            comando.CommandText = consulta
-            lector = comando.ExecuteReader()
+            'conexion.Open()
+            Dim adaptador As New SqlDataAdapter("SELECT * FROM Maquinas", conexion)
+            Dim generador As New SqlCommandBuilder(adaptador)
+            Dim resultado As New DataSet
 
-            resultado.Load(lector)
+            adaptador.Fill(resultado, "Maquinas")
+            enlace = New BindingSource(resultado, "Maquinas")
 
         Catch ex As Exception
             Throw New Exception(ex.Message, ex)
@@ -170,7 +171,7 @@ Public Class MaquinasGateway
             End If
         End Try
 
-        Return resultado
+        Return enlace
     End Function
 
 End Class
