@@ -17,6 +17,15 @@
         Return tabla
     End Function
 
+    Public Function VerTipoMaquina(ByVal id As Integer) As DataTable
+        Dim tabla As DataTable
+        Dim gateway As New TipoUsuarioGateway(My.Settings.cadena)
+
+        tabla = gateway.SeleccionarId(id)
+
+        Return tabla
+    End Function
+
     Public Function VerDatosMaquinas(ByVal id As Integer) As DataTable
         Dim tabla As DataTable
         Dim gateway As New MaquinasGateway(My.Settings.cadena)

@@ -57,7 +57,21 @@ Public Class MaquinasGateway
 
         Dim filas As Integer
         'Sentencia SQL de inserción
-        Dim consulta As String = String.Format("INSERT INTO Maquinas(modelo,precio_hora,fecha_compra,telefono_sat,tipo,descripcion,caracteristicas) VALUES ('{0}','{1}','{2}','{3}')", modelo, precio_hora, fecha_compra, telefono_sat, tipo, descripcion, caracteristicas)
+        Dim consulta As String = String.Format("INSERT INTO Maquinas(modelo,
+                                                                     precio_hora,
+                                                                     fecha_compra,
+                                                                     telefono_sat,
+                                                                     tipo,
+                                                                     descripcion,
+                                                                     caracteristicas)
+                                                VALUES ('{0}','{1}','{2}','{3}')",
+                                                                     modelo,
+                                                                     precio_hora,
+                                                                     fecha_compra,
+                                                                     telefono_sat,
+                                                                     tipo,
+                                                                     descripcion,
+                                                                     caracteristicas)
 
         'Validamos
 

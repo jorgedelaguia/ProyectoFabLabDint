@@ -42,7 +42,7 @@ Public Class Form1
     End Sub
 
     Private Sub GestiónDeMáquinasToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles NuevaMaquinaToolStripMenuItem1.Click
-        Dim form As New FromMaquinas
+        Dim form As New FormMaquinas
         form.MdiParent = Me
         form.Show()
     End Sub
