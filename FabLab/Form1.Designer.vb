@@ -24,8 +24,10 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.UsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NuevoUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VerUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MáquinasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NuevaMaquinaToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.GestiónDeMáquinasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VentanaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OrganizarVentanasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -41,8 +43,7 @@ Partial Class Form1
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
-        Me.NuevoUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NuevaMaquinaToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.toolStripProgressBar1 = New System.Windows.Forms.ToolStripProgressBar()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
@@ -65,6 +66,13 @@ Partial Class Form1
         Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(64, 20)
         Me.UsuariosToolStripMenuItem.Text = "Usuarios"
         '
+        'NuevoUsuarioToolStripMenuItem
+        '
+        Me.NuevoUsuarioToolStripMenuItem.Image = Global.FabLab.My.Resources.Resources.user_comment
+        Me.NuevoUsuarioToolStripMenuItem.Name = "NuevoUsuarioToolStripMenuItem"
+        Me.NuevoUsuarioToolStripMenuItem.Size = New System.Drawing.Size(177, 22)
+        Me.NuevoUsuarioToolStripMenuItem.Text = "Nuevo usuario"
+        '
         'VerUsuarioToolStripMenuItem
         '
         Me.VerUsuarioToolStripMenuItem.Name = "VerUsuarioToolStripMenuItem"
@@ -78,6 +86,13 @@ Partial Class Form1
         Me.MáquinasToolStripMenuItem.Size = New System.Drawing.Size(71, 20)
         Me.MáquinasToolStripMenuItem.Text = "Máquinas"
         '
+        'NuevaMaquinaToolStripMenuItem1
+        '
+        Me.NuevaMaquinaToolStripMenuItem1.Image = Global.FabLab.My.Resources.Resources.machineryadd
+        Me.NuevaMaquinaToolStripMenuItem1.Name = "NuevaMaquinaToolStripMenuItem1"
+        Me.NuevaMaquinaToolStripMenuItem1.Size = New System.Drawing.Size(185, 22)
+        Me.NuevaMaquinaToolStripMenuItem1.Text = "Nueva máquina"
+        '
         'GestiónDeMáquinasToolStripMenuItem
         '
         Me.GestiónDeMáquinasToolStripMenuItem.Name = "GestiónDeMáquinasToolStripMenuItem"
@@ -88,7 +103,7 @@ Partial Class Form1
         '
         Me.VentanaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OrganizarVentanasToolStripMenuItem, Me.MinimizarTodasToolStripMenuItem})
         Me.VentanaToolStripMenuItem.Name = "VentanaToolStripMenuItem"
-        Me.VentanaToolStripMenuItem.Size = New System.Drawing.Size(62, 20)
+        Me.VentanaToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
         Me.VentanaToolStripMenuItem.Text = "Ventana"
         '
         'OrganizarVentanasToolStripMenuItem
@@ -101,19 +116,19 @@ Partial Class Form1
         'HorizontalToolStripMenuItem
         '
         Me.HorizontalToolStripMenuItem.Name = "HorizontalToolStripMenuItem"
-        Me.HorizontalToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.HorizontalToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
         Me.HorizontalToolStripMenuItem.Text = "Horizontal"
         '
         'VerticalToolStripMenuItem
         '
         Me.VerticalToolStripMenuItem.Name = "VerticalToolStripMenuItem"
-        Me.VerticalToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.VerticalToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
         Me.VerticalToolStripMenuItem.Text = "Vertical"
         '
         'CascadaToolStripMenuItem
         '
         Me.CascadaToolStripMenuItem.Name = "CascadaToolStripMenuItem"
-        Me.CascadaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.CascadaToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
         Me.CascadaToolStripMenuItem.Text = "Cascada"
         '
         'MinimizarTodasToolStripMenuItem
@@ -137,7 +152,7 @@ Partial Class Form1
         '
         'StatusStrip1
         '
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.ToolStripStatusLabel2})
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.ToolStripStatusLabel2, Me.toolStripProgressBar1})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 506)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(919, 22)
@@ -183,19 +198,12 @@ Partial Class Form1
         Me.ToolStripButton2.Size = New System.Drawing.Size(23, 22)
         Me.ToolStripButton2.Text = "ToolStripButton2"
         '
-        'NuevoUsuarioToolStripMenuItem
+        'toolStripProgressBar1
         '
-        Me.NuevoUsuarioToolStripMenuItem.Image = Global.FabLab.My.Resources.Resources.user_comment
-        Me.NuevoUsuarioToolStripMenuItem.Name = "NuevoUsuarioToolStripMenuItem"
-        Me.NuevoUsuarioToolStripMenuItem.Size = New System.Drawing.Size(177, 22)
-        Me.NuevoUsuarioToolStripMenuItem.Text = "Nuevo usuario"
-        '
-        'NuevaMaquinaToolStripMenuItem1
-        '
-        Me.NuevaMaquinaToolStripMenuItem1.Image = Global.FabLab.My.Resources.Resources.machineryadd
-        Me.NuevaMaquinaToolStripMenuItem1.Name = "NuevaMaquinaToolStripMenuItem1"
-        Me.NuevaMaquinaToolStripMenuItem1.Size = New System.Drawing.Size(185, 22)
-        Me.NuevaMaquinaToolStripMenuItem1.Text = "Nueva máquina"
+        Me.toolStripProgressBar1.Name = "toolStripProgressBar1"
+        Me.toolStripProgressBar1.Size = New System.Drawing.Size(100, 16)
+        Me.toolStripProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee
+        Me.toolStripProgressBar1.Value = 100
         '
         'Form1
         '
@@ -242,4 +250,5 @@ Partial Class Form1
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents ToolStripButton1 As ToolStripButton
     Friend WithEvents ToolStripButton2 As ToolStripButton
+    Friend WithEvents toolStripProgressBar1 As ToolStripProgressBar
 End Class

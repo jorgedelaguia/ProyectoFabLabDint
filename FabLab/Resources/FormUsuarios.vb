@@ -55,7 +55,7 @@
                 MessageBox.Show("Se han insertado " & filas & " usuarios.", "Insertado con exito", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
 
-            MoverFotos(rutaFotos, UltimoUsuarioID())
+            'MoverFotos(rutaFotos, UltimoUsuarioID())
 
 
         Catch ex As Exception
@@ -228,20 +228,33 @@
 
             Dim fotos As String() = OpenFileDialog1.FileNames
 
-            FotosInsertarEnFlowPanel(fotos)
-            rutaFotos = fotos
+            MoverFotos(fotos, UltimoUsuarioID() + 1)
+
+            'FotosInsertarEnFlowPanel(fotos)
+            'rutaFotos = fotos
         End If
     End Sub
 
-    Private Sub FotosInsertarEnFlowPanel(ByVal fotos As String())
-        For index As Integer = 0 To fotos.Count - 1
-            Dim imagen As New PictureBox()
-            imagen.ImageLocation = fotos(index)
-            imagen.Height = 96
-            imagen.Width = 96
-            imagen.SizeMode = PictureBoxSizeMode.StretchImage
-            FlowLayoutPanel1.Controls.Add(imagen)
-        Next
+    'Private Sub FotosInsertarEnFlowPanel(ByVal fotos As String())
+    '    For index As Integer = 0 To fotos.Count - 1
+    '        Dim imagen As New PictureBox()
+    '        imagen.ImageLocation = fotos(index)
+    '        imagen.Height = 96
+    '        imagen.Width = 96
+    '        imagen.SizeMode = PictureBoxSizeMode.StretchImage
+    '        FlowLayoutPanel1.Controls.Add(imagen)
+    '    Next
+    'End Sub
+
+    Private Sub FotosInsertarEnFlowPanel(ByVal fotos As String)
+        'For index As Integer = 0 To fotos.Count - 1
+        Dim imagen As New PictureBox()
+        imagen.ImageLocation = fotos
+        imagen.Height = 96
+        imagen.Width = 96
+        imagen.SizeMode = PictureBoxSizeMode.StretchImage
+        FlowLayoutPanel1.Controls.Add(imagen)
+        'Next
     End Sub
 
     Private Sub MoverFotos(ByVal archivos As String(), ByVal id As Integer)
@@ -251,8 +264,14 @@
 
         For counter As Integer = 0 To archivos.Count - 1
             Dim archivo As String() = Split(archivos(counter), "\"c)
-            System.IO.File.Copy(archivos(counter), My.Settings.DirectorioImagenesUsuario & "usuario" & id & "_" & counter & "." & archivo(archivo.Count - 1).Split("."c)(1))
+
+            GetThumbnail(archivos(counter), My.Settings.DirectorioImagenesUsuario & "usuario" & id & "_" & counter & "." & archivo(archivo.Count - 1).Split("."c)(1))
+
+
+            'System.IO.File.Copy(archivos(counter), My.Settings.DirectorioImagenesUsuario & "usuario" & id & "_" & counter & "." & archivo(archivo.Count - 1).Split("."c)(1))
         Next
+
+
 
     End Sub
 
@@ -267,5 +286,24 @@
             imagen.SizeMode = PictureBoxSizeMode.StretchImage
             FlowLayoutPanel1.Controls.Add(imagen)
         Next
+    End Sub
+
+    Private Async Sub GetThumbnail(ByVal rutaFoto As String, ByVal ruta As String)
+        Try
+            Form1.toolStripProgressBar1.Visible = True
+
+            Dim cliente As New Microsoft.ProjectOxford.Vision.VisionServiceClient("a6bcba3173744e87b2c70cc9ff2be44a", "https://westcentralus.api.cognitive.microsoft.com/vision/v1.0")
+
+            Dim foto As Task(Of Byte()) = cliente.GetThumbnailAsync(System.IO.File.OpenRead(rutaFoto), 96, 96)
+            Dim a As Byte() = Await foto
+
+            System.IO.File.WriteAllBytes(ruta, a)
+
+            Form1.toolStripProgressBar1.Visible = False
+
+            FotosInsertarEnFlowPanel(rutaFoto)
+        Catch ex As Microsoft.ProjectOxford.Vision.ClientException
+            MessageBox.Show(ex.Error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 End Class
