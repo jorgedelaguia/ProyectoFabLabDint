@@ -4,11 +4,11 @@ Public Class FormGestionMaquinas
     Private Sub nuevaMaquinaButton_Click(sender As Object, e As EventArgs) Handles nuevaMaquinaButton.Click
         'TODO: temporal
 
-        Dim nuevoUsuarioForm As New FormMaquinas
-        nuevoUsuarioForm.tipo = FormMaquinas.TipoForm.Insertar
-        nuevoUsuarioForm.MdiParent = Form1
+        Dim nuevoMaquinasForm As New FormMaquinas
+        nuevoMaquinasForm.tipo = FormMaquinas.TipoForm.Insertar
+        nuevoMaquinasForm.MdiParent = Form1
         'nuevoUsuarioForm.usuario = 99
-        nuevoUsuarioForm.Show()
+        nuevoMaquinasForm.Show()
     End Sub
 
     Private Sub consultarMaquinaButton_Click(sender As Object, e As EventArgs) Handles consultarMaquinaButton.Click

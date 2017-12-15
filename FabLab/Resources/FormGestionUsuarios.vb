@@ -1,25 +1,12 @@
 ﻿Public Class FormGestionUsuarios
 
     Dim filaSeleccionada As DataGridViewRow
-    Private Sub ActualizarTablaUsuariosButton_Click(sender As Object, e As EventArgs) Handles ActualizarTablaUsuariosButton.Click
-        Dim enlace As BindingSource
-        Dim gateway As New UsuariosGateway(My.Settings.cadena)
 
-        enlace = gateway.SeleccionarTodosUsuarios()
-
-        enlace.Filter = "nombre like '*" & buscarUsuarioTextBox.Text & "*'"
-
-
-        usuariosDataGridView.DataSource = enlace
-        usuariosDataGridView.Columns("id").Visible = False
-        usuariosDataGridView.ReadOnly = True
-    End Sub
 
     Private Sub consultarUsuarioButton_Click(sender As Object, e As EventArgs) Handles consultarUsuarioButton.Click
         Dim nuevoUsuarioForm As New FormUsuarios
         nuevoUsuarioForm.tipo = FormUsuarios.TipoForm.Consultar
         nuevoUsuarioForm.MdiParent = Form1
-
 
         nuevoUsuarioForm.usuario = CType(usuariosDataGridView.Item(0, usuariosDataGridView.CurrentRow.Index).Value, Integer)
         nuevoUsuarioForm.Show()
@@ -50,5 +37,20 @@
         nuevoUsuarioForm.MdiParent = Form1
         'nuevoUsuarioForm.usuario = 99
         nuevoUsuarioForm.Show()
+    End Sub
+
+    Private Sub FormGestionUsuarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load, buscarUsuarioTextBox.TextChanged
+        Dim enlace As BindingSource
+        Dim gateway As New UsuariosGateway(My.Settings.cadena)
+
+        enlace = gateway.SeleccionarTodosUsuarios()
+
+        enlace.Filter = "nombre like '*" & buscarUsuarioTextBox.Text & "*'"
+
+        usuariosDataGridView.DataSource = enlace
+        usuariosDataGridView.Columns("id").Visible = False
+        usuariosDataGridView.Columns("tipo").Visible = False
+        usuariosDataGridView.Columns("fecha_alta").Visible = False
+        usuariosDataGridView.ReadOnly = True
     End Sub
 End Class

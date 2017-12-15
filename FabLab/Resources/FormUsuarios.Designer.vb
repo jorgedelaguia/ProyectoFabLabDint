@@ -22,6 +22,7 @@ Partial Class FormUsuarios
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormUsuarios))
         Me.nombreUsuarioLabel = New System.Windows.Forms.Label()
         Me.telefonoUsuarioLabel = New System.Windows.Forms.Label()
         Me.organizacionUsuarioLabel = New System.Windows.Forms.Label()
@@ -417,6 +418,7 @@ Partial Class FormUsuarios
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(899, 530)
         Me.Controls.Add(Me.mainTableLayoutPanel)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormUsuarios"
         Me.Text = "FabLab - Usuarios"
         Me.mainTableLayoutPanel.ResumeLayout(False)

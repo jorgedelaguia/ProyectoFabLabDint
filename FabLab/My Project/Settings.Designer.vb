@@ -57,9 +57,9 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Fablab;Integrated Security=Tru"& _ 
-            "e;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent"& _ 
-            "=ReadWrite;MultiSubnetFailover=False")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=FabLabBase;Integrated Security"& _ 
+            "=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIn"& _ 
+            "tent=ReadWrite;MultiSubnetFailover=False")>  _
         Public ReadOnly Property cadena() As String
             Get
                 Return CType(Me("cadena"),String)
@@ -75,6 +75,18 @@ Namespace My
             End Get
             Set
                 Me("DirectorioImagenesUsuario") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("ImagenesMaquina\")>  _
+        Public Property DirectorioImagenesMaquina() As String
+            Get
+                Return CType(Me("DirectorioImagenesMaquina"),String)
+            End Get
+            Set
+                Me("DirectorioImagenesMaquina") = value
             End Set
         End Property
     End Class

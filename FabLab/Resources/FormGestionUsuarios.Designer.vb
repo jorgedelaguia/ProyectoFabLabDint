@@ -22,6 +22,7 @@ Partial Class FormGestionUsuarios
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormGestionUsuarios))
         Me.mainTableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.eliminarUsuarioButton = New System.Windows.Forms.Button()
@@ -31,7 +32,6 @@ Partial Class FormGestionUsuarios
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.nuevoUsuarioButton = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.ActualizarTablaUsuariosButton = New System.Windows.Forms.Button()
         Me.buscarUsuarioTextBox = New System.Windows.Forms.TextBox()
         Me.mainTableLayoutPanel.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -144,22 +144,12 @@ Partial Class FormGestionUsuarios
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.ActualizarTablaUsuariosButton)
         Me.Panel1.Controls.Add(Me.buscarUsuarioTextBox)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(3, 3)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(441, 76)
         Me.Panel1.TabIndex = 3
-        '
-        'ActualizarTablaUsuariosButton
-        '
-        Me.ActualizarTablaUsuariosButton.Location = New System.Drawing.Point(351, 26)
-        Me.ActualizarTablaUsuariosButton.Name = "ActualizarTablaUsuariosButton"
-        Me.ActualizarTablaUsuariosButton.Size = New System.Drawing.Size(75, 23)
-        Me.ActualizarTablaUsuariosButton.TabIndex = 1
-        Me.ActualizarTablaUsuariosButton.Text = "Actualizar"
-        Me.ActualizarTablaUsuariosButton.UseVisualStyleBackColor = True
         '
         'buscarUsuarioTextBox
         '
@@ -174,6 +164,7 @@ Partial Class FormGestionUsuarios
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(901, 440)
         Me.Controls.Add(Me.mainTableLayoutPanel)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormGestionUsuarios"
         Me.Text = "FabLab - Gestion de usuarios"
         Me.mainTableLayoutPanel.ResumeLayout(False)
@@ -195,6 +186,5 @@ Partial Class FormGestionUsuarios
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Friend WithEvents nuevoUsuarioButton As Button
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents ActualizarTablaUsuariosButton As Button
     Friend WithEvents buscarUsuarioTextBox As TextBox
 End Class
