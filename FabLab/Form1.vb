@@ -21,7 +21,7 @@ Public Class Form1
 
     'Temporal
     Private Sub VerUsuarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VerUsuarioToolStripMenuItem.Click
-        Dim nuevoUsuarioForm As New FormGestionMaquinas
+        Dim nuevoUsuarioForm As New FormGestionUsuarios
         nuevoUsuarioForm.MdiParent = Me
 
         nuevoUsuarioForm.Show()

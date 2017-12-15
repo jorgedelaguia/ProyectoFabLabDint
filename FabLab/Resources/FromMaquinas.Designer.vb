@@ -79,7 +79,7 @@ Partial Class FromMaquinas
         '
         Me.PrecioHoraMaquinaLabel.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.PrecioHoraMaquinaLabel.AutoSize = True
-        Me.PrecioHoraMaquinaLabel.Location = New System.Drawing.Point(457, 19)
+        Me.PrecioHoraMaquinaLabel.Location = New System.Drawing.Point(456, 19)
         Me.PrecioHoraMaquinaLabel.Name = "PrecioHoraMaquinaLabel"
         Me.PrecioHoraMaquinaLabel.Size = New System.Drawing.Size(65, 13)
         Me.PrecioHoraMaquinaLabel.TabIndex = 3
@@ -89,7 +89,7 @@ Partial Class FromMaquinas
         '
         Me.tipoMaquinaLabel.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.tipoMaquinaLabel.AutoSize = True
-        Me.tipoMaquinaLabel.Location = New System.Drawing.Point(457, 71)
+        Me.tipoMaquinaLabel.Location = New System.Drawing.Point(456, 71)
         Me.tipoMaquinaLabel.Name = "tipoMaquinaLabel"
         Me.tipoMaquinaLabel.Size = New System.Drawing.Size(28, 13)
         Me.tipoMaquinaLabel.TabIndex = 4
@@ -99,7 +99,7 @@ Partial Class FromMaquinas
         '
         Me.fechaCompraMaquinaLabel.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.fechaCompraMaquinaLabel.AutoSize = True
-        Me.fechaCompraMaquinaLabel.Location = New System.Drawing.Point(733, 19)
+        Me.fechaCompraMaquinaLabel.Location = New System.Drawing.Point(732, 19)
         Me.fechaCompraMaquinaLabel.Name = "fechaCompraMaquinaLabel"
         Me.fechaCompraMaquinaLabel.Size = New System.Drawing.Size(90, 13)
         Me.fechaCompraMaquinaLabel.TabIndex = 5
@@ -124,7 +124,7 @@ Partial Class FromMaquinas
         'precioHoraMaquinaTextBox
         '
         Me.precioHoraMaquinaTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.precioHoraMaquinaTextBox.Location = New System.Drawing.Point(608, 16)
+        Me.precioHoraMaquinaTextBox.Location = New System.Drawing.Point(607, 16)
         Me.precioHoraMaquinaTextBox.Name = "precioHoraMaquinaTextBox"
         Me.precioHoraMaquinaTextBox.Size = New System.Drawing.Size(113, 20)
         Me.precioHoraMaquinaTextBox.TabIndex = 10
@@ -133,7 +133,7 @@ Partial Class FromMaquinas
         '
         Me.tipoMaquinaComboBox.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.tipoMaquinaComboBox.FormattingEnabled = True
-        Me.tipoMaquinaComboBox.Location = New System.Drawing.Point(608, 67)
+        Me.tipoMaquinaComboBox.Location = New System.Drawing.Point(607, 67)
         Me.tipoMaquinaComboBox.Name = "tipoMaquinaComboBox"
         Me.tipoMaquinaComboBox.Size = New System.Drawing.Size(113, 21)
         Me.tipoMaquinaComboBox.TabIndex = 11
@@ -141,7 +141,7 @@ Partial Class FromMaquinas
         'fechaCompraMaquinaDateTimePicker
         '
         Me.fechaCompraMaquinaDateTimePicker.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.fechaCompraMaquinaDateTimePicker.Location = New System.Drawing.Point(868, 16)
+        Me.fechaCompraMaquinaDateTimePicker.Location = New System.Drawing.Point(867, 16)
         Me.fechaCompraMaquinaDateTimePicker.Name = "fechaCompraMaquinaDateTimePicker"
         Me.fechaCompraMaquinaDateTimePicker.Size = New System.Drawing.Size(166, 20)
         Me.fechaCompraMaquinaDateTimePicker.TabIndex = 14
@@ -154,7 +154,7 @@ Partial Class FromMaquinas
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 151.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 135.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 173.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 174.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.telefonoSatLabel, 0, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.modeloMaquinaTextBox, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.TelefonoSatMaquinaTextBox, 1, 1)
@@ -178,9 +178,9 @@ Partial Class FromMaquinas
         '
         Me.anyadirTipoMaquinaButton.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.anyadirTipoMaquinaButton.Image = Global.FabLab.My.Resources.Resources.add
-        Me.anyadirTipoMaquinaButton.Location = New System.Drawing.Point(733, 67)
+        Me.anyadirTipoMaquinaButton.Location = New System.Drawing.Point(732, 64)
         Me.anyadirTipoMaquinaButton.Name = "anyadirTipoMaquinaButton"
-        Me.anyadirTipoMaquinaButton.Size = New System.Drawing.Size(21, 21)
+        Me.anyadirTipoMaquinaButton.Size = New System.Drawing.Size(27, 28)
         Me.anyadirTipoMaquinaButton.TabIndex = 15
         Me.anyadirTipoMaquinaButton.UseVisualStyleBackColor = True
         '
