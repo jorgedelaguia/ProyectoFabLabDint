@@ -1,14 +1,21 @@
 ﻿Public Class FormMaquinas
+
+    ' Dependiendo de lo que se quiera hacer se elige tipo de formulario 
     Public Enum TipoForm
         Consultar
         Modificar
         Insertar
         Eliminar
     End Enum
-
+    'variable para saber que tipo de formulario queremos
     Public tipo As TipoForm
+    'variable para saber el id de la maquina que hemos seleccionado
     Public maquina As Integer
 
+
+    ''' <summary>
+    ''' Dependiendo de que tipo de form se quiera entrara en un metodo o en otros
+    ''' </summary>
     Private Sub FormMaquinas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         If tipo = TipoForm.Consultar Then
@@ -21,6 +28,10 @@
 
     End Sub
 
+
+    ''' <summary>
+    ''' Pone los tipos de maquinas que hay en el campo de las maquinas
+    ''' </summary>
     Private Sub VerTiposMaquinas()
         Dim tablaTipoMaquinas As DataTable = NegocioMaquinas.VerTodosTipoMaquinas()
 
@@ -31,7 +42,9 @@
         Next
     End Sub
 
-
+    ''' <summary>
+    ''' Metodo para añadir tipo de maquina
+    ''' </summary>
     Private Sub anyadirTipoMaquinaButton_Click(sender As Object, e As EventArgs) Handles anyadirTipoMaquinaButton.Click
 
         Dim filas As Integer
@@ -47,6 +60,10 @@
 
     End Sub
 
+
+    ''' <summary>
+    ''' metodo para añadir nueva maquina en la base de datos
+    ''' </summary>
     Private Sub InsertarDatosMaquina()
 
         Try
@@ -72,6 +89,9 @@
 
     End Sub
 
+    ''' <summary>
+    ''' Sacar los datos de una maquina
+    ''' </summary>
     Private Sub VerDatosMaquina()
         Try
             Dim tabla As DataTable = NegocioMaquinas.VerDatosMaquinas(maquina)
@@ -113,6 +133,10 @@
         End Try
     End Sub
 
+
+    ''' <summary>
+    ''' Metodo para modificar maquina
+    ''' </summary>
     Private Sub ModificarMaquina()
         Try
 
@@ -138,6 +162,11 @@
         End Try
 
     End Sub
+
+    ''' <summary>
+    ''' Metodo para eliminar maquina
+    ''' </summary>
+    ''' <param name="id">Id de la maquina</param>
     Sub EliminarFila(id As Integer)
         Try
             Dim filas As Integer
@@ -150,6 +179,10 @@
         End Try
     End Sub
 
+
+    ''' <summary>
+    ''' Metodo para mostrar y luego modificar los datos de una maquina
+    ''' </summary>
     Private Sub VerDatosModificarMaquinas()
 
         Dim tabla As DataTable = NegocioMaquinas.VerDatosMaquinas(maquina)
@@ -175,6 +208,9 @@
         tipoMaquinaComboBox.SelectedIndex = Integer.Parse(tabla.Rows(0).Item("tipo").ToString) - 1
     End Sub
 
+    ''' <summary>
+    ''' Cuando apretemos el boton de aceptar , dependiendo de lo que estubiermos haciendo(modificando o insertando) se ejecuta un metodo o otro
+    ''' </summary>
     Private Sub aceptarMaquinaButton_Click(sender As Object, e As EventArgs) Handles aceptarMaquinaButton.Click
         If tipo = TipoForm.Insertar Then
             InsertarDatosMaquina()
@@ -188,6 +224,9 @@
         Me.Close()
     End Sub
 
+    ''' <summary>
+    ''' Insertamos las fotos en el flow panel
+    ''' </summary>
     Private Sub FotosInsertarEnFlowPanel(ByVal fotos As String)
         Dim imagen As New PictureBox()
         imagen.ImageLocation = fotos
@@ -197,6 +236,11 @@
         contenedorImagenesFlowLayoutPanel.Controls.Add(imagen)
     End Sub
 
+    ''' <summary>
+    ''' las fotos generadas por la api se guardan en la carpeta de fotos  maquinas
+    ''' </summary>
+    ''' <param name="archivos">Ruta fotos</param>
+    ''' <param name="id">Id maquina</param>
     Private Sub MoverFotos(ByVal archivos As String(), ByVal id As Integer)
         System.IO.Directory.CreateDirectory(My.Settings.DirectorioImagenesMaquina)
 
@@ -232,6 +276,11 @@
         Next
     End Sub
 
+    ''' <summary>
+    ''' Metodo de la api que convierte la imagen
+    ''' </summary>
+    ''' <param name="rutaFoto">Ruta imagen</param>
+    ''' <param name="ruta">Destino imagen</param>
     Private Async Sub GetThumbnail(ByVal rutaFoto As String, ByVal ruta As String)
         Try
             Form1.toolStripProgressBar1.Visible = True

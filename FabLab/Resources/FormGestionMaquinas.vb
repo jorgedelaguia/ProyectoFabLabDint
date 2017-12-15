@@ -1,13 +1,13 @@
-﻿Imports FabLab.FormUsuarios
+﻿Imports FabLab.FormMaquinas
 
 Public Class FormGestionMaquinas
     Private Sub nuevaMaquinaButton_Click(sender As Object, e As EventArgs) Handles nuevaMaquinaButton.Click
-        'TODO: temporal
+
 
         Dim nuevoMaquinasForm As New FormMaquinas
         nuevoMaquinasForm.tipo = FormMaquinas.TipoForm.Insertar
         nuevoMaquinasForm.MdiParent = Form1
-        'nuevoUsuarioForm.usuario = 99
+
         nuevoMaquinasForm.Show()
     End Sub
 
