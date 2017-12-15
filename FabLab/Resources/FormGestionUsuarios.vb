@@ -50,4 +50,11 @@
         usuariosDataGridView.Columns("fecha_alta").Visible = False
         usuariosDataGridView.ReadOnly = True
     End Sub
+
+    Private Sub reservasUsuarioButton_Click(sender As Object, e As EventArgs) Handles reservasUsuarioButton.Click
+        Dim reservaForm As New FormReservas
+        reservaForm.id = CType(usuariosDataGridView.Item(0, usuariosDataGridView.CurrentRow.Index).Value, Integer)
+        'nuevoUsuarioForm.MdiParent = Form1
+        reservaForm.ShowDialog()
+    End Sub
 End Class

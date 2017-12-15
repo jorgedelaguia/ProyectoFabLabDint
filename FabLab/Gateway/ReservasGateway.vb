@@ -131,4 +131,27 @@ Public Class ReservasGateway
 
 
     End Function
+
+
+    Public Function SeleccionarReservasUsuarios(id As Integer) As BindingSource
+        Dim enlace As BindingSource
+
+        Try
+            Dim adaptador As New SqlDataAdapter("SELECT * FROM Reservas where id=" & id, conexion)
+            Dim generador As New SqlCommandBuilder(adaptador)
+            Dim resultado As New DataSet
+
+            adaptador.Fill(resultado, "Reservas")
+            enlace = New BindingSource(resultado, "Reservas")
+
+        Catch ex As Exception
+            Throw New Exception(ex.Message, ex)
+        Finally
+            If (conexion IsNot Nothing) Then
+                conexion.Close()
+            End If
+        End Try
+
+        Return enlace
+    End Function
 End Class

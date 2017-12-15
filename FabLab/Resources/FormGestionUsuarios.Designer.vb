@@ -33,6 +33,7 @@ Partial Class FormGestionUsuarios
         Me.nuevoUsuarioButton = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.buscarUsuarioTextBox = New System.Windows.Forms.TextBox()
+        Me.reservasUsuarioButton = New System.Windows.Forms.Button()
         Me.mainTableLayoutPanel.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.usuariosDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -60,26 +61,28 @@ Partial Class FormGestionUsuarios
         '
         'TableLayoutPanel1
         '
-        Me.TableLayoutPanel1.ColumnCount = 3
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel1.Controls.Add(Me.eliminarUsuarioButton, 2, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.consultarUsuarioButton, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.editarUsuarioButton, 1, 0)
+        Me.TableLayoutPanel1.ColumnCount = 4
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel1.Controls.Add(Me.eliminarUsuarioButton, 3, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.editarUsuarioButton, 2, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.consultarUsuarioButton, 1, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.reservasUsuarioButton, 0, 0)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(587, 399)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(453, 399)
         Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(3, 3, 30, 3)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(284, 38)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(418, 38)
         Me.TableLayoutPanel1.TabIndex = 0
         '
         'eliminarUsuarioButton
         '
         Me.eliminarUsuarioButton.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.eliminarUsuarioButton.Location = New System.Drawing.Point(206, 7)
+        Me.eliminarUsuarioButton.Location = New System.Drawing.Point(340, 7)
         Me.eliminarUsuarioButton.Name = "eliminarUsuarioButton"
         Me.eliminarUsuarioButton.Size = New System.Drawing.Size(75, 23)
         Me.eliminarUsuarioButton.TabIndex = 5
@@ -89,7 +92,7 @@ Partial Class FormGestionUsuarios
         'consultarUsuarioButton
         '
         Me.consultarUsuarioButton.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.consultarUsuarioButton.Location = New System.Drawing.Point(16, 7)
+        Me.consultarUsuarioButton.Location = New System.Drawing.Point(130, 7)
         Me.consultarUsuarioButton.Name = "consultarUsuarioButton"
         Me.consultarUsuarioButton.Size = New System.Drawing.Size(75, 23)
         Me.consultarUsuarioButton.TabIndex = 3
@@ -99,7 +102,7 @@ Partial Class FormGestionUsuarios
         'editarUsuarioButton
         '
         Me.editarUsuarioButton.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.editarUsuarioButton.Location = New System.Drawing.Point(110, 7)
+        Me.editarUsuarioButton.Location = New System.Drawing.Point(234, 7)
         Me.editarUsuarioButton.Name = "editarUsuarioButton"
         Me.editarUsuarioButton.Size = New System.Drawing.Size(75, 23)
         Me.editarUsuarioButton.TabIndex = 4
@@ -158,6 +161,16 @@ Partial Class FormGestionUsuarios
         Me.buscarUsuarioTextBox.Size = New System.Drawing.Size(304, 20)
         Me.buscarUsuarioTextBox.TabIndex = 0
         '
+        'reservasUsuarioButton
+        '
+        Me.reservasUsuarioButton.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.reservasUsuarioButton.Location = New System.Drawing.Point(26, 7)
+        Me.reservasUsuarioButton.Name = "reservasUsuarioButton"
+        Me.reservasUsuarioButton.Size = New System.Drawing.Size(75, 23)
+        Me.reservasUsuarioButton.TabIndex = 6
+        Me.reservasUsuarioButton.Text = "Reservas"
+        Me.reservasUsuarioButton.UseVisualStyleBackColor = True
+        '
         'FormGestionUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -187,4 +200,5 @@ Partial Class FormGestionUsuarios
     Friend WithEvents nuevoUsuarioButton As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents buscarUsuarioTextBox As TextBox
+    Friend WithEvents reservasUsuarioButton As Button
 End Class
