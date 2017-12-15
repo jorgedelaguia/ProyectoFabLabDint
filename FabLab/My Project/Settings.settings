@@ -5,12 +5,18 @@
     <Setting Name="cadena" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Fablab;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=bd;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False&lt;/ConnectionString&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Fablab;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False</Value>
+      <Value Profile="(Default)">Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=bd;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False</Value>
     </Setting>
     <Setting Name="DirectorioImagenesUsuario" Type="System.String" Scope="User">
       <Value Profile="(Default)">ImagenesUsuario\</Value>
+    </Setting>
+    <Setting Name="APIKEY" Type="System.String" Scope="User">
+      <Value Profile="(Default)">a6bcba3173744e87b2c70cc9ff2be44a</Value>
+    </Setting>
+    <Setting Name="enlace" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://westcentralus.api.cognitive.microsoft.com/vision/v1.0</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -43,12 +43,9 @@
     End Sub
 
     Private Sub nuevoUsuarioButton_Click(sender As Object, e As EventArgs) Handles nuevoUsuarioButton.Click
-        'TODO: temporal
-
         Dim nuevoUsuarioForm As New FormUsuarios
         nuevoUsuarioForm.tipo = FormUsuarios.TipoForm.Insertar
         nuevoUsuarioForm.MdiParent = Form1
-        'nuevoUsuarioForm.usuario = 99
         nuevoUsuarioForm.Show()
     End Sub
 End Class

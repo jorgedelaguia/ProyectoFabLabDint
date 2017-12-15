@@ -22,6 +22,7 @@ Partial Class FormUsuarios
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.nombreUsuarioLabel = New System.Windows.Forms.Label()
         Me.telefonoUsuarioLabel = New System.Windows.Forms.Label()
         Me.organizacionUsuarioLabel = New System.Windows.Forms.Label()
@@ -41,7 +42,6 @@ Partial Class FormUsuarios
         Me.fechaNacimientoUsuarioDateTimePicker = New System.Windows.Forms.DateTimePicker()
         Me.examinarFotosButton = New System.Windows.Forms.Button()
         Me.observacionesUsuarioTextBox = New System.Windows.Forms.TextBox()
-        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.tipoUsuarioComboBox = New System.Windows.Forms.ComboBox()
         Me.aceptarUsuarioButton = New System.Windows.Forms.Button()
         Me.cancelarUsuarioButton = New System.Windows.Forms.Button()
@@ -53,12 +53,16 @@ Partial Class FormUsuarios
         Me.fotosObservacionesTableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.mainTableLayoutPanel.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
         Me.datosUsuarioTableLayoutPanel.SuspendLayout()
         Me.TableLayoutPanel6.SuspendLayout()
         Me.fotosObservacionesTableLayoutPanel.SuspendLayout()
         Me.TableLayoutPanel5.SuspendLayout()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'nombreUsuarioLabel
@@ -241,14 +245,6 @@ Partial Class FormUsuarios
         Me.observacionesUsuarioTextBox.Size = New System.Drawing.Size(414, 183)
         Me.observacionesUsuarioTextBox.TabIndex = 18
         '
-        'FlowLayoutPanel1
-        '
-        Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(3, 46)
-        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(413, 183)
-        Me.FlowLayoutPanel1.TabIndex = 19
-        '
         'tipoUsuarioComboBox
         '
         Me.tipoUsuarioComboBox.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -380,8 +376,8 @@ Partial Class FormUsuarios
         Me.fotosObservacionesTableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.fotosObservacionesTableLayoutPanel.Controls.Add(Me.observacionesUsuarioLabel, 1, 0)
         Me.fotosObservacionesTableLayoutPanel.Controls.Add(Me.observacionesUsuarioTextBox, 1, 1)
-        Me.fotosObservacionesTableLayoutPanel.Controls.Add(Me.FlowLayoutPanel1, 0, 1)
         Me.fotosObservacionesTableLayoutPanel.Controls.Add(Me.TableLayoutPanel5, 0, 0)
+        Me.fotosObservacionesTableLayoutPanel.Controls.Add(Me.PictureBox1, 0, 1)
         Me.fotosObservacionesTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.fotosObservacionesTableLayoutPanel.Location = New System.Drawing.Point(30, 241)
         Me.fotosObservacionesTableLayoutPanel.Margin = New System.Windows.Forms.Padding(30, 3, 30, 3)
@@ -411,6 +407,19 @@ Partial Class FormUsuarios
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.ContainerControl = Me
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 46)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(183, 183)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 21
+        Me.PictureBox1.TabStop = False
+        '
         'FormUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -428,6 +437,8 @@ Partial Class FormUsuarios
         Me.fotosObservacionesTableLayoutPanel.PerformLayout()
         Me.TableLayoutPanel5.ResumeLayout(False)
         Me.TableLayoutPanel5.PerformLayout()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -451,7 +462,6 @@ Partial Class FormUsuarios
     Friend WithEvents fechaNacimientoUsuarioDateTimePicker As DateTimePicker
     Friend WithEvents examinarFotosButton As Button
     Friend WithEvents observacionesUsuarioTextBox As TextBox
-    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
     Friend WithEvents aniadirTipoUsuarioButton As Button
     Friend WithEvents tipoUsuarioComboBox As ComboBox
     Friend WithEvents aceptarUsuarioButton As Button
@@ -463,4 +473,6 @@ Partial Class FormUsuarios
     Friend WithEvents TableLayoutPanel5 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel6 As TableLayoutPanel
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents ErrorProvider1 As ErrorProvider
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

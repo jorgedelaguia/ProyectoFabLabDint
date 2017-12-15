@@ -1,8 +1,4 @@
-﻿'Todo Gateways solo comprobaciones basicas(not null), otra capa(Ej. negocios) ortas comprobaciones ej. tamaño string...
-
-
-
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
 
 ''' <summary>
 ''' Gateway para la tabla Usuarios
@@ -43,10 +39,8 @@ Public Class UsuariosGateway
     ''' <param name="tipoUsuario">Tipo usuario</param>
     ''' <returns></returns>
     Public Function Insertar(nombre As String, apellidos As String, fechaNacimiento As Date, telefono As String, email As String, direccion As String, organizacion As String, tipoUsuario As Integer, fecha_alta As Date) As Integer
-
         Dim filas As Integer
 
-        'FIXME: usar parametros del objeto Command pdf ut3_ado pag 9
         Dim consulta As String = "INSERT INTO Usuarios(nombre, 
                                                         apellidos, 
                                                         fecha_nacimiento, 
@@ -73,11 +67,6 @@ Public Class UsuariosGateway
             Throw New ArgumentException("El apellido no puede se null/vacio")
         End If
 
-        'If fechaNacimiento = "" Or fechaNacimiento Is Nothing Then
-        '    Throw New ArgumentException("El fecha de nacimiento no puede se null/vacio")
-        'End If
-
-        'If IsNumeric(tipoUsuario) Or Not IsNothing(tipoUsuario) Then
         If IsNothing(tipoUsuario) Then
             Throw New ArgumentException("El tipo de usuario no puede se null/vacio")
         End If
@@ -86,7 +75,6 @@ Public Class UsuariosGateway
         Try
             conexion.Open()
             comando.CommandText = consulta
-            'comando.Parameters.Add("@id", SqlDbType.Int)
             comando.Parameters.Add("@nombre", SqlDbType.VarChar)
             comando.Parameters.Add("@apellidos", SqlDbType.VarChar)
             comando.Parameters.Add("@fechaNacimiento", SqlDbType.Date)
@@ -98,7 +86,6 @@ Public Class UsuariosGateway
             comando.Parameters.Add("@fecha_alta", SqlDbType.Date)
 
 
-            'comando.Parameters("@id").Value = id
             comando.Parameters("@nombre").Value = nombre
             comando.Parameters("@apellidos").Value = apellidos
             comando.Parameters("@fechaNacimiento").Value = fechaNacimiento
@@ -123,17 +110,24 @@ Public Class UsuariosGateway
 
     End Function
 
-
-
-    Public Function Actualizar(id As Integer, nombre As String, apellidos As String, fecha_nacimiento As String, telefono As String, email As String, direccion As String, organizacion As String, tipo As Integer) As Integer
+    Public Function Actualizar(id As Integer, nombre As String, apellidos As String, fecha_nacimiento As Date, telefono As String, email As String, direccion As String, organizacion As String, tipo As Integer) As Integer
 
         Dim filas As Integer
 
         Dim consulta As String = "Update Usuarios set nombre=@nombre, apellidos=@apellidos, fecha_nacimiento=@fecha_nacimiento, telefono=@telefono, email=@email, direccion=@direccion, organizacion=@organizacion, tipo=@tipo WHERE id=@id"
 
-        'Validar datos
-        'TODO: validar datos
+        'validar datos
+        If nombre = "" Or nombre Is Nothing Then
+            Throw New ArgumentException("El nombre no puede se null/vacio")
+        End If
 
+        If apellidos = "" Or apellidos Is Nothing Then
+            Throw New ArgumentException("El apellido no puede se null/vacio")
+        End If
+
+        If IsNothing(tipo) Then
+            Throw New ArgumentException("El tipo de usuario no puede se null/vacio")
+        End If
 
 
 
@@ -187,8 +181,6 @@ Public Class UsuariosGateway
             Throw New ArgumentException("El id no puede estar vacio")
         End If
 
-
-
         'Ejecutar
         Try
             conexion.Open()
@@ -208,8 +200,6 @@ Public Class UsuariosGateway
         Return filas
 
     End Function
-
-
 
     Public Function SeleccionarId(id As Integer) As DataTable
         Dim consulta As String = "SELECT * FROM Usuarios where id=@id"
@@ -242,13 +232,10 @@ Public Class UsuariosGateway
         Return resultado
     End Function
 
-
     Public Function ObtenerIdUltimoUsuario() As Integer
         Dim consulta As String = "select id from Usuarios where id = (select max(id) from Usuarios)"
         Dim resultado As New DataTable
         Dim lector As SqlDataReader
-
-
 
         'Ejecutar
         Try
@@ -270,9 +257,12 @@ Public Class UsuariosGateway
         Return Integer.Parse(resultado.Rows(0).Item("id").ToString)
     End Function
 
+    ''' <summary>
+    ''' Obtiene todos los datos de los usuarios de la base de datos
+    ''' </summary>
+    ''' <returns></returns>
     Public Function SeleccionarTodosUsuarios() As BindingSource
         Dim enlace As BindingSource
-
 
         Try
             'conexion.Open()

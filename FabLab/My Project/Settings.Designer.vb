@@ -57,9 +57,9 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Fablab;Integrated Security=Tru"& _ 
-            "e;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent"& _ 
-            "=ReadWrite;MultiSubnetFailover=False")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=bd;Integrated Security=True;Co"& _ 
+            "nnect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=Rea"& _ 
+            "dWrite;MultiSubnetFailover=False")>  _
         Public ReadOnly Property cadena() As String
             Get
                 Return CType(Me("cadena"),String)
@@ -75,6 +75,30 @@ Namespace My
             End Get
             Set
                 Me("DirectorioImagenesUsuario") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("a6bcba3173744e87b2c70cc9ff2be44a")>  _
+        Public Property APIKEY() As String
+            Get
+                Return CType(Me("APIKEY"),String)
+            End Get
+            Set
+                Me("APIKEY") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("https://westcentralus.api.cognitive.microsoft.com/vision/v1.0")>  _
+        Public Property enlace() As String
+            Get
+                Return CType(Me("enlace"),String)
+            End Get
+            Set
+                Me("enlace") = value
             End Set
         End Property
     End Class
