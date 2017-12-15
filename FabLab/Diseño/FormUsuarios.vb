@@ -330,19 +330,6 @@ Public Class FormUsuarios
         Next
     End Sub
 
-    'FIXME: FormUsuarios solo una foto
-    'Private Sub RellenaFotos(ByVal id As Integer)
-    '    Dim fotos As String() = System.IO.Directory.GetFiles(My.Settings.DirectorioImagenesUsuario, "usuario" & id & "*")
-
-    '    For index As Integer = 0 To fotos.Count - 1
-    '        Dim imagen As New PictureBox()
-    '        imagen.ImageLocation = fotos(index)
-    '        imagen.Height = 96
-    '        imagen.Width = 96
-    '        imagen.SizeMode = PictureBoxSizeMode.StretchImage
-    '        FlowLayoutPanel1.Controls.Add(imagen)
-    '    Next
-    'End Sub
 
     ''' <summary>
     ''' API generar Thumbnail

@@ -116,48 +116,47 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Negocio\NegocioMaquinas.vb" />
-    <Compile Include="Negocio\NegocioReservas.vb" />
     <Compile Include="Negocio\NegocioUsuarios.vb" />
-    <Compile Include="Resources\FormAcercaDe.Designer.vb">
+    <Compile Include="Diseño\FormAcercaDe.Designer.vb">
       <DependentUpon>FormAcercaDe.vb</DependentUpon>
     </Compile>
-    <Compile Include="Resources\FormAcercaDe.vb">
+    <Compile Include="Diseño\FormAcercaDe.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Resources\FormGestionMaquinas.Designer.vb">
+    <Compile Include="Diseño\FormGestionMaquinas.Designer.vb">
       <DependentUpon>FormGestionMaquinas.vb</DependentUpon>
     </Compile>
-    <Compile Include="Resources\FormGestionMaquinas.vb">
+    <Compile Include="Diseño\FormGestionMaquinas.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Resources\FormGestionUsuarios.Designer.vb">
+    <Compile Include="Diseño\FormGestionUsuarios.Designer.vb">
       <DependentUpon>FormGestionUsuarios.vb</DependentUpon>
     </Compile>
-    <Compile Include="Resources\FormGestionUsuarios.vb">
+    <Compile Include="Diseño\FormGestionUsuarios.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Resources\FormReservas.Designer.vb">
+    <Compile Include="Diseño\FormReservas.Designer.vb">
       <DependentUpon>FormReservas.vb</DependentUpon>
     </Compile>
-    <Compile Include="Resources\FormReservas.vb">
+    <Compile Include="Diseño\FormReservas.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Resources\FormUsuarios.Designer.vb">
+    <Compile Include="Diseño\FormUsuarios.Designer.vb">
       <DependentUpon>FormUsuarios.vb</DependentUpon>
     </Compile>
-    <Compile Include="Resources\FormUsuarios.vb">
+    <Compile Include="Diseño\FormUsuarios.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Resources\FormMaquinas.Designer.vb">
+    <Compile Include="Diseño\FormMaquinas.Designer.vb">
       <DependentUpon>FormMaquinas.vb</DependentUpon>
     </Compile>
-    <Compile Include="Resources\FormMaquinas.vb">
+    <Compile Include="Diseño\FormMaquinas.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Resources\SplashScreen1.Designer.vb">
+    <Compile Include="Diseño\SplashScreen1.Designer.vb">
       <DependentUpon>SplashScreen1.vb</DependentUpon>
     </Compile>
-    <Compile Include="Resources\SplashScreen1.vb">
+    <Compile Include="Diseño\SplashScreen1.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -171,25 +170,25 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\FormAcercaDe.resx">
+    <EmbeddedResource Include="Diseño\FormAcercaDe.resx">
       <DependentUpon>FormAcercaDe.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\FormGestionMaquinas.resx">
+    <EmbeddedResource Include="Diseño\FormGestionMaquinas.resx">
       <DependentUpon>FormGestionMaquinas.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\FormGestionUsuarios.resx">
+    <EmbeddedResource Include="Diseño\FormGestionUsuarios.resx">
       <DependentUpon>FormGestionUsuarios.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\FormReservas.resx">
+    <EmbeddedResource Include="Diseño\FormReservas.resx">
       <DependentUpon>FormReservas.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\FormUsuarios.resx">
+    <EmbeddedResource Include="Diseño\FormUsuarios.resx">
       <DependentUpon>FormUsuarios.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\FormMaquinas.resx">
+    <EmbeddedResource Include="Diseño\FormMaquinas.resx">
       <DependentUpon>FormMaquinas.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\SplashScreen1.resx">
+    <EmbeddedResource Include="Diseño\SplashScreen1.resx">
       <DependentUpon>SplashScreen1.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>

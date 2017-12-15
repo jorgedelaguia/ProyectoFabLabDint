@@ -104,7 +104,7 @@ Partial Class Form1
         '
         Me.VentanaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OrganizarVentanasToolStripMenuItem, Me.MinimizarTodasToolStripMenuItem})
         Me.VentanaToolStripMenuItem.Name = "VentanaToolStripMenuItem"
-        Me.VentanaToolStripMenuItem.Size = New System.Drawing.Size(62, 20)
+        Me.VentanaToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
         Me.VentanaToolStripMenuItem.Text = "Ventana"
         '
         'OrganizarVentanasToolStripMenuItem

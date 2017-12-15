@@ -68,4 +68,18 @@ Public Class Form1
             Me.MdiChildren(i).WindowState = FormWindowState.Minimized
         Next
     End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        toolStripProgressBar1.Visible = False
+
+        ToolStripStatusLabel1.Text = "Usuarios: " + NegocioUsuarios.CantidadUsuarios().ToString
+        ToolStripStatusLabel2.Text = "Máquinas: " + NegocioMaquinas.CantidadMaquinas().ToString
+
+
+
+
+
+    End Sub
+
+
 End Class

@@ -75,4 +75,14 @@
 
         Return filas
     End Function
+
+    Public Function CantidadMaquinas() As Integer
+        Dim gateway As New MaquinasGateway(My.Settings.cadena)
+        Dim i As Integer
+
+        i = gateway.CantidadMaquinas()
+
+
+        Return i
+    End Function
 End Module

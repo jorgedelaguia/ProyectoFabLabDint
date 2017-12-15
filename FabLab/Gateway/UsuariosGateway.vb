@@ -283,4 +283,32 @@ Public Class UsuariosGateway
 
         Return enlace
     End Function
+
+
+    Public Function CantidadUsuarios() As Integer
+        Dim consulta As String = "SELECT count(*) FROM Usuarios"
+        Dim resultado As New DataTable
+        Dim lector As SqlDataReader
+
+        'Ejecutar
+        Try
+            conexion.Open()
+            comando.CommandText = consulta
+
+            lector = comando.ExecuteReader()
+
+            resultado.Load(lector)
+
+        Catch ex As Exception
+            Throw New Exception(ex.Message, ex)
+        Finally
+            If (conexion IsNot Nothing) Then
+                conexion.Close()
+            End If
+        End Try
+
+        Return Integer.Parse(resultado.Rows(0).Item(0).ToString)
+
+
+    End Function
 End Class

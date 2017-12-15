@@ -74,4 +74,13 @@
         Return id
     End Function
 
+    Public Function CantidadUsuarios() As Integer
+        Dim gateway As New UsuariosGateway(My.Settings.cadena)
+        Dim i As Integer
+
+        i = gateway.CantidadUsuarios()
+
+        Return i
+    End Function
+
 End Module
