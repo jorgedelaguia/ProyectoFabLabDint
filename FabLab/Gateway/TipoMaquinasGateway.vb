@@ -1,10 +1,21 @@
 ﻿Imports System.Data.SqlClient
-
+''' <summary>
+''' Clase para definir los gateways de el tipo Maquinas que hay 
+''' </summary>
 Public Class TipoMaquinasGateway
 
-
+    ''' <summary>
+    ''' Almacena el objeto Connection
+    ''' </summary>
     Private conexion As SqlConnection
+    ''' <summary>
+    ''' Almacena el objeto Command
+    ''' </summary>
     Private comando As SqlCommand
+
+    ''' <summary>
+    ''' Constructor: crea el objeto de aceso a la base de datos
+    ''' </summary>
 
     Public Sub New(ByRef cadenaConexion As String)
         conexion = New SqlConnection(cadenaConexion)
@@ -18,7 +29,7 @@ Public Class TipoMaquinasGateway
         Dim filas As Integer
         Dim consulta As String = "INSERT INTO TiposMaquina(tipo) values (@tipo)"
 
-        'Validamos
+        'Validamos datos
         If tipo = "" Or IsNothing(tipo) Then
             Throw New ArgumentException("El tipo no puede se null/vacio")
         End If
@@ -51,7 +62,7 @@ Public Class TipoMaquinasGateway
 
         Dim consulta As String = "DELETE FROM TiposMaquina where id=@id"
 
-        'Validamos
+        'Validamos datos
         If id = 0 Or id = Nothing Then
             Throw New ArgumentException("El id no puede ser null o vacio")
         End If

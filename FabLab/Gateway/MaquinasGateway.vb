@@ -1,23 +1,45 @@
 ﻿Imports System.Data.SqlClient
-
+''' <summary>
+''' Clase para definir los gateways de Maquinas
+''' </summary>
 Public Class MaquinasGateway
-
+    ''' <summary>
+    ''' Almacena el objeto Connection
+    ''' </summary>
     Private conexion As SqlConnection
+    ''' <summary>
+    ''' Almacena el objeto Command
+    ''' </summary>
     Private comando As SqlCommand
-
+    ''' <summary>
+    ''' Constructor: crea el objeto de aceso a la base de datos
+    ''' </summary>
     Public Sub New(ByRef cadenaConexion As String)
         conexion = New SqlConnection(cadenaConexion)
         comando = New SqlCommand()
         comando.Connection = conexion
     End Sub
 
+    ''' <summary>
+    ''' Actualiza un registro
+    ''' </summary>
+    ''' <param name="id">id de la maquina</param>
+    ''' <param name="modelo">modelo de la maquina</param>
+    ''' <param name="precio_hora">Precio por hora</param>
+    ''' <param name="fecha_compra">La fecha en la que se a comprado la maquina</param>
+    ''' <param name="telefono_sat">telefono para ayuda de la maquina</param>
+    ''' <param name="tipo">tipo de maquina que es</param>
+    ''' <param name="descripcion">descripcion de la maquina</param>
+    ''' <param name="caracteristicas">caracteristicas de la maquina</param>
+    ''' <returns></returns>
+    ''' 
     Public Function Actualizar(id As Integer, modelo As String, precio_hora As Decimal, fecha_compra As Date, telefono_sat As String, tipo As Integer, descripcion As String, caracteristicas As String) As Integer
 
         Dim filas As Integer
         'Sentencia SQL de actualizaciónn
         Dim consulta As String = String.Format("UPDATE Fablab SET modelo='{0}',precio_hora='{1}',fecha_compra='{2}',telefono_sat='{3}',tipo='{4}', descripcion='{5}',caracteristicas='{6}' WHERE id={7})", modelo, precio_hora, fecha_compra, fecha_compra, telefono_sat, tipo, descripcion, caracteristicas, id)
 
-        'Validamos
+        'Validamos datos
         If id = 0 Or id = Nothing Then
             Throw New ArgumentException("El id no puede ser null o vacio")
         End If
@@ -77,7 +99,7 @@ Public Class MaquinasGateway
                                                                      descripcion,
                                                                      caracteristicas)
 
-        'Validamos
+        'Validamos los datos
 
         If modelo = "" Or modelo Is Nothing Then
             Throw New ArgumentException("El modelo no puede estar vacío")
@@ -120,14 +142,14 @@ Public Class MaquinasGateway
 
         Dim consulta As String = "DELETE FROM Maquinas WHERE id=@id"
 
-        'Validar
+        'Validar el dato
         If id = 0 Then
             Throw New ArgumentException("El id no puede estar vacio")
         End If
 
 
 
-        'Ejecutar
+        'Ejecutamos la consulta
         Try
             conexion.Open()
             comando.CommandText = consulta
@@ -147,7 +169,10 @@ Public Class MaquinasGateway
 
     End Function
 
-
+    ''' <summary>
+    ''' Obtiene una maquina segun su id
+    ''' </summary>
+    ''' <returns></returns>
     Public Function SeleccionarId(id As Integer) As DataTable
         Dim consulta As String = "SELECT * FROM Maquinas where id=@id"
         Dim resultado As New DataTable
@@ -158,7 +183,7 @@ Public Class MaquinasGateway
             Throw New ArgumentException("El id no puede estar vacio")
         End If
 
-
+        'Ejecutamos la consulta
         Try
             conexion.Open()
             comando.CommandText = consulta
@@ -179,6 +204,10 @@ Public Class MaquinasGateway
         Return resultado
     End Function
 
+    ''' <summary>
+    ''' Obtiene la ultima maquina
+    ''' </summary>
+    ''' <returns></returns>
     Public Function IdUltimaMaquina() As Integer
         Dim consulta As String = "select id from Maquinas where id = (select max(id) from Maquinas)"
         Dim resultado As New DataTable
@@ -206,6 +235,11 @@ Public Class MaquinasGateway
         Return Integer.Parse(resultado.Rows(0).Item("id").ToString)
     End Function
 
+    ''' <summary>
+    ''' Coje todos los datos de maquinas
+    ''' </summary>
+    ''' <returns></returns>
+    ''' 
     Public Function SeleccionarTodasMaquinas() As BindingSource
         Dim enlace As BindingSource
 
