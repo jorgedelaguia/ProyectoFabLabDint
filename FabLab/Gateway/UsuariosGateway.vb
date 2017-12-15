@@ -176,9 +176,6 @@ Public Class UsuariosGateway
 
     End Function
 
-
-
-
     Public Function Eliminar(id As Integer) As Integer
 
         Dim filas As Integer
@@ -194,6 +191,7 @@ Public Class UsuariosGateway
 
         'Ejecutar
         Try
+            conexion.Open()
             comando.CommandText = consulta
             comando.Parameters.Add("@id", SqlDbType.Int)
             comando.Parameters("@id").Value = id
@@ -270,5 +268,29 @@ Public Class UsuariosGateway
         End Try
 
         Return Integer.Parse(resultado.Rows(0).Item("id").ToString)
+    End Function
+
+    Public Function SeleccionarTodosUsuarios() As BindingSource
+        Dim enlace As BindingSource
+
+
+        Try
+            'conexion.Open()
+            Dim adaptador As New SqlDataAdapter("SELECT * FROM Usuarios", conexion)
+            Dim generador As New SqlCommandBuilder(adaptador)
+            Dim resultado As New DataSet
+
+            adaptador.Fill(resultado, "Usuarios")
+            enlace = New BindingSource(resultado, "Usuarios")
+
+        Catch ex As Exception
+            Throw New Exception(ex.Message, ex)
+        Finally
+            If (conexion IsNot Nothing) Then
+                conexion.Close()
+            End If
+        End Try
+
+        Return enlace
     End Function
 End Class

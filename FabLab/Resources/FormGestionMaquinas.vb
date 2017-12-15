@@ -4,28 +4,28 @@ Public Class FormGestionMaquinas
     Private Sub nuevaMaquinaButton_Click(sender As Object, e As EventArgs) Handles nuevaMaquinaButton.Click
         'TODO: temporal
 
-        Dim nuevoUsuarioForm As New FromMaquinas
-        nuevoUsuarioForm.tipo = FromMaquinas.TipoForm.Insertar
+        Dim nuevoUsuarioForm As New FormMaquinas
+        nuevoUsuarioForm.tipo = FormMaquinas.TipoForm.Insertar
         nuevoUsuarioForm.MdiParent = Form1
         'nuevoUsuarioForm.usuario = 99
         nuevoUsuarioForm.Show()
     End Sub
 
     Private Sub consultarMaquinaButton_Click(sender As Object, e As EventArgs) Handles consultarMaquinaButton.Click
-        Dim nuevoUsuarioForm As New FromMaquinas
-        nuevoUsuarioForm.tipo = FromMaquinas.TipoForm.Consultar
+        Dim nuevoUsuarioForm As New FormMaquinas
+        nuevoUsuarioForm.tipo = FormMaquinas.TipoForm.Consultar
         nuevoUsuarioForm.MdiParent = Form1
 
 
-        nuevoUsuarioForm.usuario = CType(DataGridView1.Item(0, DataGridView1.CurrentRow.Index).Value, Integer)
+        nuevoUsuarioForm.maquina = CType(DataGridView1.Item(0, DataGridView1.CurrentRow.Index).Value, Integer)
         nuevoUsuarioForm.Show()
     End Sub
 
     Private Sub editarMaquinaButton_Click(sender As Object, e As EventArgs) Handles editarMaquinaButton.Click
-        Dim nuevoUsuarioForm As New FromMaquinas
-        nuevoUsuarioForm.tipo = FromMaquinas.TipoForm.Modificar
+        Dim nuevoUsuarioForm As New FormMaquinas
+        nuevoUsuarioForm.tipo = FormMaquinas.TipoForm.Modificar
         nuevoUsuarioForm.MdiParent = Form1
-        nuevoUsuarioForm.usuario = CType(DataGridView1.Item(0, DataGridView1.CurrentRow.Index).Value, Integer)
+        nuevoUsuarioForm.maquina = CType(DataGridView1.Item(0, DataGridView1.CurrentRow.Index).Value, Integer)
         nuevoUsuarioForm.Show()
     End Sub
 
@@ -42,5 +42,13 @@ Public Class FormGestionMaquinas
         DataGridView1.Columns("id").Visible = False
         DataGridView1.ReadOnly = True
 
+    End Sub
+
+    Private Sub eliminarMaquinaButton_Click(sender As Object, e As EventArgs) Handles eliminarMaquinaButton.Click
+        Dim nuevaMaquinaForm As New FormMaquinas
+        nuevaMaquinaForm.tipo = FormMaquinas.TipoForm.Eliminar
+
+
+        nuevaMaquinaForm.EliminarFila(CType(DataGridView1.Item(0, DataGridView1.CurrentRow.Index).Value, Integer))
     End Sub
 End Class

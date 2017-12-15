@@ -30,15 +30,12 @@
         Next
     End Sub
 
-    Private Sub CancelarMaquinaButton_Click(sender As Object, e As EventArgs) Handles CancelarMaquinaButton.Click
-        Me.Close()
-    End Sub
 
     Private Sub anyadirTipoMaquinaButton_Click(sender As Object, e As EventArgs) Handles anyadirTipoMaquinaButton.Click
 
         Dim filas As Integer
 
-        filas = NegocioUsuarios.InsertarTipoUsuario(tipoMaquinaComboBox.Text.Trim)
+        filas = NegocioMaquinas.InsertarTipoMaquina(tipoMaquinaComboBox.Text.Trim)
 
 
         If filas > 0 Then
@@ -135,6 +132,17 @@
         End Try
 
     End Sub
+    Sub EliminarFila(id As Integer)
+        Try
+            Dim filas As Integer
+
+            filas = NegocioMaquinas.EliminarMaquina(id)
+
+            MessageBox.Show("Maquina borrada correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
 
     Private Sub VerDatosModificarMaquinas()
         'Carga los datos del usuario para modificarlos
@@ -153,6 +161,43 @@
         VerTiposMaquinas()
 
         tipoMaquinaComboBox.SelectedIndex = Integer.Parse(tabla.Rows(0).Item("tipo").ToString) - 1
+    End Sub
+
+    Private Sub aceptarMaquinaButton_Click(sender As Object, e As EventArgs) Handles aceptarMaquinaButton.Click
+        If tipo = TipoForm.Insertar Then
+            InsertarDatosMaquina()
+
+        ElseIf tipo = TipoForm.Modificar Then
+            ModificarMaquina()
+        End If
+    End Sub
+
+    Private Sub CancelarMaquinaButton_Click(sender As Object, e As EventArgs) Handles CancelarMaquinaButton.Click
+        Me.Close()
+    End Sub
+
+
+    Private Sub FotosInsertarEnFlowPanel(ByVal fotos As String())
+        For index As Integer = 0 To fotos.Count - 1
+            Dim imagen As New PictureBox()
+            imagen.ImageLocation = fotos(index)
+            imagen.Height = 96
+            imagen.Width = 96
+            imagen.SizeMode = PictureBoxSizeMode.StretchImage
+            contenedorImagenesFlowLayoutPanel.Controls.Add(imagen)
+        Next
+    End Sub
+
+
+    Private Sub examinarImagenesMaquinaButton_Click(sender As Object, e As EventArgs) Handles examinarImagenesMaquinaButton.Click
+        imagenesOpenFileDialog.Multiselect = True
+        If imagenesOpenFileDialog.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
+
+            Dim fotos As String() = imagenesOpenFileDialog.FileNames
+
+            FotosInsertarEnFlowPanel(fotos)
+            'rutaFotos = fotos
+        End If
     End Sub
 
 

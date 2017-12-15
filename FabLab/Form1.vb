@@ -13,12 +13,6 @@ Public Class Form1
     End Sub
 
 
-
-
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
     'Temporal
     Private Sub VerUsuarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VerUsuarioToolStripMenuItem.Click
         Dim nuevoUsuarioForm As New FormGestionUsuarios
@@ -29,6 +23,7 @@ Public Class Form1
 
     Private Sub GestiónDeMáquinasToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles GestiónDeMáquinasToolStripMenuItem.Click
         Dim form As New FormGestionMaquinas
+
         form.MdiParent = Me
         form.Show()
     End Sub
@@ -41,10 +36,11 @@ Public Class Form1
         NuevaMaquinaToolStripMenuItem1.PerformClick()
     End Sub
 
-    Private Sub GestiónDeMáquinasToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles NuevaMaquinaToolStripMenuItem1.Click
-        Dim form As New FormMaquinas
-        form.MdiParent = Me
-        form.Show()
+    Private Sub NuevaMaquina(sender As Object, e As EventArgs) Handles NuevaMaquinaToolStripMenuItem1.Click
+        Dim nuevamaquinaform As New FormMaquinas
+        nuevamaquinaform.tipo = FormMaquinas.TipoForm.Insertar
+        nuevamaquinaform.MdiParent = Me
+        nuevamaquinaform.Show()
     End Sub
 
     Private Sub AcercaDeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AcercaDeToolStripMenuItem.Click

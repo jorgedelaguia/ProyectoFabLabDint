@@ -108,17 +108,22 @@ Public Class MaquinasGateway
     Public Function Eliminar(id As Integer) As Integer
 
         Dim filas As Integer
-        'Sentencia SQL de borrado
-        Dim consulta As String = String.Format("DELETE FROM Maquinas WHERE id={0})", id)
 
-        'Validamos
-        If id = 0 Or id = Nothing Then
-            Throw New ArgumentException("El id no puede ser null o vacio")
+        Dim consulta As String = "DELETE FROM Maquinas WHERE id=@id"
+
+        'Validar
+        If id = 0 Then
+            Throw New ArgumentException("El id no puede estar vacio")
         End If
 
+
+
+        'Ejecutar
         Try
             conexion.Open()
             comando.CommandText = consulta
+            comando.Parameters.Add("@id", SqlDbType.Int)
+            comando.Parameters("@id").Value = id
             filas = comando.ExecuteNonQuery()
 
         Catch ex As Exception
@@ -132,6 +137,7 @@ Public Class MaquinasGateway
         Return filas
 
     End Function
+
 
     Public Function SeleccionarId(id As Integer) As DataTable
         Dim consulta As String = "SELECT * FROM Maquinas where id=@id"

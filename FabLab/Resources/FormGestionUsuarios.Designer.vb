@@ -29,12 +29,15 @@ Partial Class FormGestionUsuarios
         Me.editarUsuarioButton = New System.Windows.Forms.Button()
         Me.usuariosDataGridView = New System.Windows.Forms.DataGridView()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.nuevaUsuarioButton = New System.Windows.Forms.Button()
+        Me.nuevoUsuarioButton = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.ActualizarTablaUsuariosButton = New System.Windows.Forms.Button()
         Me.buscarUsuarioTextBox = New System.Windows.Forms.TextBox()
         Me.mainTableLayoutPanel.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.usuariosDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel2.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'mainTableLayoutPanel
@@ -118,8 +121,8 @@ Partial Class FormGestionUsuarios
         Me.TableLayoutPanel2.ColumnCount = 2
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel2.Controls.Add(Me.nuevaUsuarioButton, 1, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.buscarUsuarioTextBox, 0, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.nuevoUsuarioButton, 1, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.Panel1, 0, 0)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 3)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
@@ -128,24 +131,41 @@ Partial Class FormGestionUsuarios
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(895, 82)
         Me.TableLayoutPanel2.TabIndex = 2
         '
-        'nuevaUsuarioButton
+        'nuevoUsuarioButton
         '
-        Me.nuevaUsuarioButton.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.nuevaUsuarioButton.Location = New System.Drawing.Point(766, 29)
-        Me.nuevaUsuarioButton.Margin = New System.Windows.Forms.Padding(3, 3, 30, 3)
-        Me.nuevaUsuarioButton.Name = "nuevaUsuarioButton"
-        Me.nuevaUsuarioButton.Size = New System.Drawing.Size(99, 23)
-        Me.nuevaUsuarioButton.TabIndex = 2
-        Me.nuevaUsuarioButton.Text = "Nueva usuario"
-        Me.nuevaUsuarioButton.UseVisualStyleBackColor = True
+        Me.nuevoUsuarioButton.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.nuevoUsuarioButton.Location = New System.Drawing.Point(766, 29)
+        Me.nuevoUsuarioButton.Margin = New System.Windows.Forms.Padding(3, 3, 30, 3)
+        Me.nuevoUsuarioButton.Name = "nuevoUsuarioButton"
+        Me.nuevoUsuarioButton.Size = New System.Drawing.Size(99, 23)
+        Me.nuevoUsuarioButton.TabIndex = 2
+        Me.nuevoUsuarioButton.Text = "Nuevo usuario"
+        Me.nuevoUsuarioButton.UseVisualStyleBackColor = True
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.ActualizarTablaUsuariosButton)
+        Me.Panel1.Controls.Add(Me.buscarUsuarioTextBox)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(3, 3)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(441, 76)
+        Me.Panel1.TabIndex = 3
+        '
+        'ActualizarTablaUsuariosButton
+        '
+        Me.ActualizarTablaUsuariosButton.Location = New System.Drawing.Point(351, 26)
+        Me.ActualizarTablaUsuariosButton.Name = "ActualizarTablaUsuariosButton"
+        Me.ActualizarTablaUsuariosButton.Size = New System.Drawing.Size(75, 23)
+        Me.ActualizarTablaUsuariosButton.TabIndex = 1
+        Me.ActualizarTablaUsuariosButton.Text = "Actualizar"
+        Me.ActualizarTablaUsuariosButton.UseVisualStyleBackColor = True
         '
         'buscarUsuarioTextBox
         '
-        Me.buscarUsuarioTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.buscarUsuarioTextBox.Location = New System.Drawing.Point(30, 31)
-        Me.buscarUsuarioTextBox.Margin = New System.Windows.Forms.Padding(30, 3, 3, 3)
+        Me.buscarUsuarioTextBox.Location = New System.Drawing.Point(24, 26)
         Me.buscarUsuarioTextBox.Name = "buscarUsuarioTextBox"
-        Me.buscarUsuarioTextBox.Size = New System.Drawing.Size(319, 20)
+        Me.buscarUsuarioTextBox.Size = New System.Drawing.Size(304, 20)
         Me.buscarUsuarioTextBox.TabIndex = 0
         '
         'FormGestionUsuarios
@@ -160,7 +180,8 @@ Partial Class FormGestionUsuarios
         Me.TableLayoutPanel1.ResumeLayout(False)
         CType(Me.usuariosDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel2.ResumeLayout(False)
-        Me.TableLayoutPanel2.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -172,6 +193,8 @@ Partial Class FormGestionUsuarios
     Friend WithEvents editarUsuarioButton As Button
     Friend WithEvents usuariosDataGridView As DataGridView
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
-    Friend WithEvents nuevaUsuarioButton As Button
+    Friend WithEvents nuevoUsuarioButton As Button
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents ActualizarTablaUsuariosButton As Button
     Friend WithEvents buscarUsuarioTextBox As TextBox
 End Class

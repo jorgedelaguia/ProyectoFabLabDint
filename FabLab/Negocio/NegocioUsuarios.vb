@@ -58,6 +58,16 @@
         Return filas
     End Function
 
+    Public Function EliminarUsuario(ByVal id As Integer) As Integer
+        Dim gateway As New UsuariosGateway(My.Settings.cadena)
+        Dim filas As Integer
+
+        filas = gateway.Eliminar(id)
+        Return filas
+
+    End Function
+
+
     Public Function UltimoUsuarioID() As Integer
         Dim gateway As New UsuariosGateway(My.Settings.cadena)
         Dim id As Integer

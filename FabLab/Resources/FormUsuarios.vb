@@ -24,6 +24,8 @@
 
     End Sub
 
+
+
     Private Sub VerTiposUsuarios()
         Dim tablaTipoUsuario As DataTable = NegocioUsuarios.VerTodosTipoUsuarios()
 
@@ -121,6 +123,18 @@
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
+    End Sub
+
+    Sub EliminarFila(id As Integer)
+        Try
+            Dim filas As Integer
+
+            filas = NegocioUsuarios.EliminarUsuario(id)
+
+            MessageBox.Show("Usuario eliminado correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Private Sub VerDatosUsuario()
