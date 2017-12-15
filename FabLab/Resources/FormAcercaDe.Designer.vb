@@ -30,18 +30,19 @@ Partial Class FormAcercaDe
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormAcercaDe))
         Me.TableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
         Me.LabelProductName = New System.Windows.Forms.Label()
+        Me.LogoPictureBox = New System.Windows.Forms.PictureBox()
         Me.LabelVersion = New System.Windows.Forms.Label()
         Me.LabelCopyright = New System.Windows.Forms.Label()
         Me.LabelCompanyName = New System.Windows.Forms.Label()
         Me.aceptarButton = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
-        Me.LogoPictureBox = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanel.SuspendLayout()
-        Me.Panel1.SuspendLayout()
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'TableLayoutPanel
@@ -84,6 +85,17 @@ Partial Class FormAcercaDe
         Me.LabelProductName.TabIndex = 0
         Me.LabelProductName.Text = "Nombre de producto : Gestor de FabLab"
         Me.LabelProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'LogoPictureBox
+        '
+        Me.LogoPictureBox.Image = Global.FabLab.My.Resources.Resources.Fab_Lab
+        Me.LogoPictureBox.Location = New System.Drawing.Point(3, 3)
+        Me.LogoPictureBox.Name = "LogoPictureBox"
+        Me.TableLayoutPanel.SetRowSpan(Me.LogoPictureBox, 6)
+        Me.LogoPictureBox.Size = New System.Drawing.Size(124, 121)
+        Me.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.LogoPictureBox.TabIndex = 0
+        Me.LogoPictureBox.TabStop = False
         '
         'LabelVersion
         '
@@ -151,17 +163,6 @@ Partial Class FormAcercaDe
     "odemos crear borrar y modificar usuarios y maquinas , además gestionar reservas " &
     "de las  para el uso de las maquinas"
         '
-        'LogoPictureBox
-        '
-        Me.LogoPictureBox.Image = Global.FabLab.My.Resources.Resources.Fab_Lab
-        Me.LogoPictureBox.Location = New System.Drawing.Point(3, 3)
-        Me.LogoPictureBox.Name = "LogoPictureBox"
-        Me.TableLayoutPanel.SetRowSpan(Me.LogoPictureBox, 6)
-        Me.LogoPictureBox.Size = New System.Drawing.Size(124, 121)
-        Me.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.LogoPictureBox.TabIndex = 0
-        Me.LogoPictureBox.TabStop = False
-        '
         'FormAcercaDe
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -170,6 +171,7 @@ Partial Class FormAcercaDe
         Me.ClientSize = New System.Drawing.Size(414, 276)
         Me.Controls.Add(Me.TableLayoutPanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FormAcercaDe"
@@ -178,8 +180,8 @@ Partial Class FormAcercaDe
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "FabLab - Acerca de"
         Me.TableLayoutPanel.ResumeLayout(False)
-        Me.Panel1.ResumeLayout(False)
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub

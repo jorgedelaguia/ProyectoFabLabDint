@@ -18,5 +18,8 @@
     <Setting Name="enlace" Type="System.String" Scope="User">
       <Value Profile="(Default)">https://westcentralus.api.cognitive.microsoft.com/vision/v1.0</Value>
     </Setting>
+    <Setting Name="DirectorioImagenesMaquina" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ImagenesMaquina\</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

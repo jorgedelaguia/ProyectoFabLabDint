@@ -367,4 +367,5 @@ Public Class FormUsuarios
             MessageBox.Show(ex.Error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+
 End Class

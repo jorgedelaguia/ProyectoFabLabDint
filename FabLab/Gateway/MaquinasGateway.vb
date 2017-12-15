@@ -30,6 +30,10 @@ Public Class MaquinasGateway
             Throw New ArgumentException("El tipo no puede ser 0")
         End If
 
+        If precio_hora < 0 Then
+            Throw New ArgumentException("El precio por hora tiene que ser mayor que 0")
+        End If
+
         Dim expresionRegular As New System.Text.RegularExpressions.Regex("[0-9]{9}")
         If expresionRegular.IsMatch(telefono_sat) Then
             Throw New ArgumentException("El teléfono debe contener 9 dígitos")
@@ -64,7 +68,7 @@ Public Class MaquinasGateway
                                                                      tipo,
                                                                      descripcion,
                                                                      caracteristicas)
-                                                VALUES ('{0}','{1}','{2}','{3}')",
+                                                VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}')",
                                                                      modelo,
                                                                      precio_hora,
                                                                      fecha_compra,
@@ -82,6 +86,11 @@ Public Class MaquinasGateway
         If tipo = 0 Then
             Throw New ArgumentException("El tipo no puede ser 0")
         End If
+
+        If precio_hora < 0 Then
+            Throw New ArgumentException("El precio por hora tiene que ser mayor que 0")
+        End If
+
 
         Dim expresionRegular As New System.Text.RegularExpressions.Regex("[0-9]{9}")
         If expresionRegular.IsMatch(telefono_sat) Then
@@ -168,6 +177,33 @@ Public Class MaquinasGateway
         End Try
 
         Return resultado
+    End Function
+
+    Public Function IdUltimaMaquina() As Integer
+        Dim consulta As String = "select id from Maquinas where id = (select max(id) from Maquinas)"
+        Dim resultado As New DataTable
+        Dim lector As SqlDataReader
+
+
+
+
+        Try
+            conexion.Open()
+            comando.CommandText = consulta
+
+            lector = comando.ExecuteReader()
+
+            resultado.Load(lector)
+
+        Catch ex As Exception
+            Throw New Exception(ex.Message, ex)
+        Finally
+            If (conexion IsNot Nothing) Then
+                conexion.Close()
+            End If
+        End Try
+
+        Return Integer.Parse(resultado.Rows(0).Item("id").ToString)
     End Function
 
     Public Function SeleccionarTodasMaquinas() As BindingSource

@@ -8,6 +8,7 @@
 
     Public tipo As TipoForm
     Public maquina As Integer
+
     Private Sub FormUsuarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         If tipo = TipoForm.Consultar Then
@@ -80,6 +81,7 @@
             precioHoraMaquinaTextBox.Enabled = False
             caracteristicasMaquinaTextBox.Enabled = False
             descripcionMaquinaTextBox.Enabled = False
+            fechaCompraMaquinaDateTimePicker.Enabled = False
             tipoMaquinaComboBox.Enabled = False
             anyadirTipoMaquinaButton.Enabled = False
 
@@ -94,6 +96,11 @@
 
             descripcionMaquinaTextBox.Text = tabla.Rows(0).Item("descripcion").ToString
 
+            Dim fecha As String = tabla.Rows(0).Item("fecha_compra").ToString
+            Dim fechas As String() = fecha.Split("/"c)
+            Dim anio As Integer = Integer.Parse(fechas(2).Substring(0, 4))
+
+            fechaCompraMaquinaDateTimePicker.Value = New Date(anio, Integer.Parse(fechas(1)), Integer.Parse(fechas(0)))
 
             'TODO falta la fechaCompra
 
@@ -146,13 +153,19 @@
 
     Private Sub VerDatosModificarMaquinas()
         'Carga los datos del usuario para modificarlos
-        Dim tabla As DataTable = NegocioUsuarios.VerDatosUsuarios(maquina)
+        Dim tabla As DataTable = NegocioMaquinas.VerDatosMaquinas(maquina)
 
         modeloMaquinaTextBox.Text = tabla.Rows(0).Item("modelo").ToString
 
         TelefonoSatMaquinaTextBox.Text = tabla.Rows(0).Item("telefono_sat").ToString
 
         precioHoraMaquinaTextBox.Text = tabla.Rows(0).Item("precio_hora").ToString
+
+        Dim fecha As String = tabla.Rows(0).Item("fecha_compra").ToString
+        Dim fechas As String() = fecha.Split("/"c)
+        Dim anio As Integer = Integer.Parse(fechas(2).Substring(0, 4))
+
+        fechaCompraMaquinaDateTimePicker.Value = New Date(anio, Integer.Parse(fechas(1)), Integer.Parse(fechas(0)))
 
         caracteristicasMaquinaTextBox.Text = tabla.Rows(0).Item("caracteristicas").ToString
 
@@ -176,18 +189,25 @@
         Me.Close()
     End Sub
 
-
-    Private Sub FotosInsertarEnFlowPanel(ByVal fotos As String())
-        For index As Integer = 0 To fotos.Count - 1
-            Dim imagen As New PictureBox()
-            imagen.ImageLocation = fotos(index)
-            imagen.Height = 96
-            imagen.Width = 96
-            imagen.SizeMode = PictureBoxSizeMode.StretchImage
-            contenedorImagenesFlowLayoutPanel.Controls.Add(imagen)
-        Next
+    Private Sub FotosInsertarEnFlowPanel(ByVal fotos As String)
+        Dim imagen As New PictureBox()
+        imagen.ImageLocation = fotos
+        imagen.Height = 150
+        imagen.Width = 150
+        imagen.SizeMode = PictureBoxSizeMode.Zoom
+        contenedorImagenesFlowLayoutPanel.Controls.Add(imagen)
     End Sub
 
+    Private Sub MoverFotos(ByVal archivos As String(), ByVal id As Integer)
+        System.IO.Directory.CreateDirectory(My.Settings.DirectorioImagenesMaquina)
+
+        For counter As Integer = 0 To archivos.Count - 1
+            Dim archivo As String() = Split(archivos(counter), "\"c)
+
+            GetThumbnail(archivos(counter), My.Settings.DirectorioImagenesMaquina & "maquina" & id & "_" & counter & "." & archivo(archivo.Count - 1).Split("."c)(1))
+        Next
+
+    End Sub
 
     Private Sub examinarImagenesMaquinaButton_Click(sender As Object, e As EventArgs) Handles examinarImagenesMaquinaButton.Click
         imagenesOpenFileDialog.Multiselect = True
@@ -195,10 +215,40 @@
 
             Dim fotos As String() = imagenesOpenFileDialog.FileNames
 
-            FotosInsertarEnFlowPanel(fotos)
-            'rutaFotos = fotos
+            MoverFotos(fotos, UltimaMaquinaPorID() + 1)
+
         End If
     End Sub
 
+    Private Sub RellenaFoto(ByVal id As Integer)
+        Dim fotos As String() = System.IO.Directory.GetFiles(My.Settings.DirectorioImagenesMaquina, "maquina" & id & "*")
+
+        For index As Integer = 0 To fotos.Count - 1
+            Dim imagen As New PictureBox()
+            imagen.ImageLocation = fotos(index)
+            imagen.Height = 150
+            imagen.Width = 150
+            imagen.SizeMode = PictureBoxSizeMode.Zoom
+            contenedorImagenesFlowLayoutPanel.Controls.Add(imagen)
+        Next
+    End Sub
+
+    Private Async Sub GetThumbnail(ByVal rutaFoto As String, ByVal ruta As String)
+        Try
+            Form1.toolStripProgressBar1.Visible = True
+
+            Dim cliente As New Microsoft.ProjectOxford.Vision.VisionServiceClient("a6bcba3173744e87b2c70cc9ff2be44a", "https://westcentralus.api.cognitive.microsoft.com/vision/v1.0")
+
+            Dim foto As Task(Of Byte()) = cliente.GetThumbnailAsync(System.IO.File.OpenRead(rutaFoto), 150, 150)
+            Dim a As Byte() = Await foto
+
+            IO.File.WriteAllBytes(ruta, a)
+
+            Form1.toolStripProgressBar1.Visible = False
+
+        Catch ex As Microsoft.ProjectOxford.Vision.ClientException
+            MessageBox.Show(ex.Error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
 
 End Class

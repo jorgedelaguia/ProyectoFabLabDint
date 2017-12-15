@@ -22,6 +22,7 @@ Partial Class Form1
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.UsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NuevoUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -40,10 +41,10 @@ Partial Class Form1
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel2 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.toolStripProgressBar1 = New System.Windows.Forms.ToolStripProgressBar()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
-        Me.toolStripProgressBar1 = New System.Windows.Forms.ToolStripProgressBar()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
@@ -103,7 +104,7 @@ Partial Class Form1
         '
         Me.VentanaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OrganizarVentanasToolStripMenuItem, Me.MinimizarTodasToolStripMenuItem})
         Me.VentanaToolStripMenuItem.Name = "VentanaToolStripMenuItem"
-        Me.VentanaToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
+        Me.VentanaToolStripMenuItem.Size = New System.Drawing.Size(62, 20)
         Me.VentanaToolStripMenuItem.Text = "Ventana"
         '
         'OrganizarVentanasToolStripMenuItem
@@ -171,6 +172,13 @@ Partial Class Form1
         Me.ToolStripStatusLabel2.Size = New System.Drawing.Size(65, 17)
         Me.ToolStripStatusLabel2.Text = "Máquinas: "
         '
+        'toolStripProgressBar1
+        '
+        Me.toolStripProgressBar1.Name = "toolStripProgressBar1"
+        Me.toolStripProgressBar1.Size = New System.Drawing.Size(100, 16)
+        Me.toolStripProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee
+        Me.toolStripProgressBar1.Value = 100
+        '
         'ToolStrip1
         '
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripButton2})
@@ -198,13 +206,6 @@ Partial Class Form1
         Me.ToolStripButton2.Size = New System.Drawing.Size(23, 22)
         Me.ToolStripButton2.Text = "ToolStripButton2"
         '
-        'toolStripProgressBar1
-        '
-        Me.toolStripProgressBar1.Name = "toolStripProgressBar1"
-        Me.toolStripProgressBar1.Size = New System.Drawing.Size(100, 16)
-        Me.toolStripProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee
-        Me.toolStripProgressBar1.Value = 100
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -213,6 +214,7 @@ Partial Class Form1
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Form1"

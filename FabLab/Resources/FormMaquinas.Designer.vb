@@ -22,6 +22,7 @@ Partial Class FormMaquinas
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormMaquinas))
         Me.modeloMaquinaLabel = New System.Windows.Forms.Label()
         Me.telefonoSatLabel = New System.Windows.Forms.Label()
         Me.PrecioHoraMaquinaLabel = New System.Windows.Forms.Label()
@@ -36,24 +37,24 @@ Partial Class FormMaquinas
         Me.anyadirTipoMaquinaButton = New System.Windows.Forms.Button()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.examinarImagenesMaquinaButton = New System.Windows.Forms.Button()
-        Me.imagenesMaquinaLabel = New System.Windows.Forms.Label()
+        Me.contenedorImagenesFlowLayoutPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.aceptarMaquinaButton = New System.Windows.Forms.Button()
         Me.CancelarMaquinaButton = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.examinarImagenesMaquinaButton = New System.Windows.Forms.Button()
+        Me.imagenesMaquinaLabel = New System.Windows.Forms.Label()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.descripcionMaquinaLabel = New System.Windows.Forms.Label()
         Me.descripcionMaquinaTextBox = New System.Windows.Forms.TextBox()
         Me.caracteristicasMaquinaLabel = New System.Windows.Forms.Label()
         Me.caracteristicasMaquinaTextBox = New System.Windows.Forms.TextBox()
         Me.imagenesOpenFileDialog = New System.Windows.Forms.OpenFileDialog()
-        Me.contenedorImagenesFlowLayoutPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
-        Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -61,7 +62,7 @@ Partial Class FormMaquinas
         '
         Me.modeloMaquinaLabel.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.modeloMaquinaLabel.AutoSize = True
-        Me.modeloMaquinaLabel.Location = New System.Drawing.Point(3, 19)
+        Me.modeloMaquinaLabel.Location = New System.Drawing.Point(3, 14)
         Me.modeloMaquinaLabel.Name = "modeloMaquinaLabel"
         Me.modeloMaquinaLabel.Size = New System.Drawing.Size(42, 13)
         Me.modeloMaquinaLabel.TabIndex = 0
@@ -71,7 +72,7 @@ Partial Class FormMaquinas
         '
         Me.telefonoSatLabel.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.telefonoSatLabel.AutoSize = True
-        Me.telefonoSatLabel.Location = New System.Drawing.Point(3, 71)
+        Me.telefonoSatLabel.Location = New System.Drawing.Point(3, 55)
         Me.telefonoSatLabel.Name = "telefonoSatLabel"
         Me.telefonoSatLabel.Size = New System.Drawing.Size(73, 13)
         Me.telefonoSatLabel.TabIndex = 1
@@ -81,7 +82,7 @@ Partial Class FormMaquinas
         '
         Me.PrecioHoraMaquinaLabel.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.PrecioHoraMaquinaLabel.AutoSize = True
-        Me.PrecioHoraMaquinaLabel.Location = New System.Drawing.Point(454, 19)
+        Me.PrecioHoraMaquinaLabel.Location = New System.Drawing.Point(238, 14)
         Me.PrecioHoraMaquinaLabel.Name = "PrecioHoraMaquinaLabel"
         Me.PrecioHoraMaquinaLabel.Size = New System.Drawing.Size(65, 13)
         Me.PrecioHoraMaquinaLabel.TabIndex = 3
@@ -91,7 +92,7 @@ Partial Class FormMaquinas
         '
         Me.tipoMaquinaLabel.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.tipoMaquinaLabel.AutoSize = True
-        Me.tipoMaquinaLabel.Location = New System.Drawing.Point(454, 71)
+        Me.tipoMaquinaLabel.Location = New System.Drawing.Point(238, 55)
         Me.tipoMaquinaLabel.Name = "tipoMaquinaLabel"
         Me.tipoMaquinaLabel.Size = New System.Drawing.Size(28, 13)
         Me.tipoMaquinaLabel.TabIndex = 4
@@ -101,7 +102,7 @@ Partial Class FormMaquinas
         '
         Me.fechaCompraMaquinaLabel.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.fechaCompraMaquinaLabel.AutoSize = True
-        Me.fechaCompraMaquinaLabel.Location = New System.Drawing.Point(730, 19)
+        Me.fechaCompraMaquinaLabel.Location = New System.Drawing.Point(477, 14)
         Me.fechaCompraMaquinaLabel.Name = "fechaCompraMaquinaLabel"
         Me.fechaCompraMaquinaLabel.Size = New System.Drawing.Size(90, 13)
         Me.fechaCompraMaquinaLabel.TabIndex = 5
@@ -110,40 +111,40 @@ Partial Class FormMaquinas
         'modeloMaquinaTextBox
         '
         Me.modeloMaquinaTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.modeloMaquinaTextBox.Location = New System.Drawing.Point(215, 16)
+        Me.modeloMaquinaTextBox.Location = New System.Drawing.Point(110, 10)
         Me.modeloMaquinaTextBox.Name = "modeloMaquinaTextBox"
-        Me.modeloMaquinaTextBox.Size = New System.Drawing.Size(54, 20)
+        Me.modeloMaquinaTextBox.Size = New System.Drawing.Size(122, 20)
         Me.modeloMaquinaTextBox.TabIndex = 8
         '
         'TelefonoSatMaquinaTextBox
         '
         Me.TelefonoSatMaquinaTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.TelefonoSatMaquinaTextBox.Location = New System.Drawing.Point(215, 68)
+        Me.TelefonoSatMaquinaTextBox.Location = New System.Drawing.Point(110, 52)
         Me.TelefonoSatMaquinaTextBox.Name = "TelefonoSatMaquinaTextBox"
-        Me.TelefonoSatMaquinaTextBox.Size = New System.Drawing.Size(54, 20)
+        Me.TelefonoSatMaquinaTextBox.Size = New System.Drawing.Size(122, 20)
         Me.TelefonoSatMaquinaTextBox.TabIndex = 9
         '
         'precioHoraMaquinaTextBox
         '
         Me.precioHoraMaquinaTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.precioHoraMaquinaTextBox.Location = New System.Drawing.Point(605, 16)
+        Me.precioHoraMaquinaTextBox.Location = New System.Drawing.Point(332, 10)
         Me.precioHoraMaquinaTextBox.Name = "precioHoraMaquinaTextBox"
-        Me.precioHoraMaquinaTextBox.Size = New System.Drawing.Size(113, 20)
+        Me.precioHoraMaquinaTextBox.Size = New System.Drawing.Size(129, 20)
         Me.precioHoraMaquinaTextBox.TabIndex = 10
         '
         'tipoMaquinaComboBox
         '
         Me.tipoMaquinaComboBox.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.tipoMaquinaComboBox.FormattingEnabled = True
-        Me.tipoMaquinaComboBox.Location = New System.Drawing.Point(605, 67)
+        Me.tipoMaquinaComboBox.Location = New System.Drawing.Point(332, 51)
         Me.tipoMaquinaComboBox.Name = "tipoMaquinaComboBox"
-        Me.tipoMaquinaComboBox.Size = New System.Drawing.Size(113, 21)
+        Me.tipoMaquinaComboBox.Size = New System.Drawing.Size(129, 21)
         Me.tipoMaquinaComboBox.TabIndex = 11
         '
         'fechaCompraMaquinaDateTimePicker
         '
         Me.fechaCompraMaquinaDateTimePicker.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.fechaCompraMaquinaDateTimePicker.Location = New System.Drawing.Point(865, 16)
+        Me.fechaCompraMaquinaDateTimePicker.Location = New System.Drawing.Point(620, 10)
         Me.fechaCompraMaquinaDateTimePicker.Name = "fechaCompraMaquinaDateTimePicker"
         Me.fechaCompraMaquinaDateTimePicker.Size = New System.Drawing.Size(166, 20)
         Me.fechaCompraMaquinaDateTimePicker.TabIndex = 14
@@ -151,12 +152,12 @@ Partial Class FormMaquinas
         'TableLayoutPanel1
         '
         Me.TableLayoutPanel1.ColumnCount = 6
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.03196!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.96804!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 151.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 135.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 176.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.68966!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.31034!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 94.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 145.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 143.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 242.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.telefonoSatLabel, 0, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.modeloMaquinaTextBox, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.TelefonoSatMaquinaTextBox, 1, 1)
@@ -168,19 +169,20 @@ Partial Class FormMaquinas
         Me.TableLayoutPanel1.Controls.Add(Me.fechaCompraMaquinaLabel, 4, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.modeloMaquinaLabel, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.anyadirTipoMaquinaButton, 4, 1)
+        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(3, 3)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 2
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1039, 104)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(860, 83)
         Me.TableLayoutPanel1.TabIndex = 19
         '
         'anyadirTipoMaquinaButton
         '
         Me.anyadirTipoMaquinaButton.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.anyadirTipoMaquinaButton.Image = Global.FabLab.My.Resources.Resources.add
-        Me.anyadirTipoMaquinaButton.Location = New System.Drawing.Point(730, 64)
+        Me.anyadirTipoMaquinaButton.Location = New System.Drawing.Point(477, 48)
         Me.anyadirTipoMaquinaButton.Name = "anyadirTipoMaquinaButton"
         Me.anyadirTipoMaquinaButton.Size = New System.Drawing.Size(27, 28)
         Me.anyadirTipoMaquinaButton.TabIndex = 15
@@ -193,64 +195,48 @@ Partial Class FormMaquinas
         Me.TableLayoutPanel2.Controls.Add(Me.TableLayoutPanel4, 0, 2)
         Me.TableLayoutPanel2.Controls.Add(Me.TableLayoutPanel3, 0, 1)
         Me.TableLayoutPanel2.Controls.Add(Me.TableLayoutPanel1, 0, 0)
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(28, 12)
+        Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 3
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.71429!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 64.28571!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 219.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(1045, 529)
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.1939!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 69.80609!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 284.0!))
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(866, 581)
         Me.TableLayoutPanel2.TabIndex = 20
         '
         'TableLayoutPanel4
         '
         Me.TableLayoutPanel4.ColumnCount = 1
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel4.Controls.Add(Me.Panel1, 0, 0)
-        Me.TableLayoutPanel4.Controls.Add(Me.Panel2, 0, 2)
         Me.TableLayoutPanel4.Controls.Add(Me.contenedorImagenesFlowLayoutPanel, 0, 1)
-        Me.TableLayoutPanel4.Location = New System.Drawing.Point(3, 312)
+        Me.TableLayoutPanel4.Controls.Add(Me.Panel2, 0, 2)
+        Me.TableLayoutPanel4.Controls.Add(Me.Panel1, 0, 0)
+        Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel4.Location = New System.Drawing.Point(3, 299)
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
         Me.TableLayoutPanel4.RowCount = 3
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36.09467!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 63.90533!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24.89796!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75.10204!))
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33.0!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(1039, 214)
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(860, 279)
         Me.TableLayoutPanel4.TabIndex = 21
         '
-        'Panel1
+        'contenedorImagenesFlowLayoutPanel
         '
-        Me.Panel1.Controls.Add(Me.examinarImagenesMaquinaButton)
-        Me.Panel1.Controls.Add(Me.imagenesMaquinaLabel)
-        Me.Panel1.Location = New System.Drawing.Point(3, 3)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(160, 52)
-        Me.Panel1.TabIndex = 22
-        '
-        'examinarImagenesMaquinaButton
-        '
-        Me.examinarImagenesMaquinaButton.Location = New System.Drawing.Point(70, 8)
-        Me.examinarImagenesMaquinaButton.Name = "examinarImagenesMaquinaButton"
-        Me.examinarImagenesMaquinaButton.Size = New System.Drawing.Size(75, 28)
-        Me.examinarImagenesMaquinaButton.TabIndex = 15
-        Me.examinarImagenesMaquinaButton.Text = "Examinar"
-        Me.examinarImagenesMaquinaButton.UseVisualStyleBackColor = True
-        '
-        'imagenesMaquinaLabel
-        '
-        Me.imagenesMaquinaLabel.AutoSize = True
-        Me.imagenesMaquinaLabel.Location = New System.Drawing.Point(3, 16)
-        Me.imagenesMaquinaLabel.Name = "imagenesMaquinaLabel"
-        Me.imagenesMaquinaLabel.Size = New System.Drawing.Size(53, 13)
-        Me.imagenesMaquinaLabel.TabIndex = 6
-        Me.imagenesMaquinaLabel.Text = "Imágenes"
+        Me.contenedorImagenesFlowLayoutPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.contenedorImagenesFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.contenedorImagenesFlowLayoutPanel.Location = New System.Drawing.Point(3, 64)
+        Me.contenedorImagenesFlowLayoutPanel.Name = "contenedorImagenesFlowLayoutPanel"
+        Me.contenedorImagenesFlowLayoutPanel.Size = New System.Drawing.Size(854, 178)
+        Me.contenedorImagenesFlowLayoutPanel.TabIndex = 23
         '
         'Panel2
         '
         Me.Panel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.Controls.Add(Me.aceptarMaquinaButton)
         Me.Panel2.Controls.Add(Me.CancelarMaquinaButton)
-        Me.Panel2.Location = New System.Drawing.Point(873, 183)
+        Me.Panel2.Location = New System.Drawing.Point(694, 248)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(163, 28)
         Me.Panel2.TabIndex = 22
@@ -273,6 +259,34 @@ Partial Class FormMaquinas
         Me.CancelarMaquinaButton.Text = "Cancelar"
         Me.CancelarMaquinaButton.UseVisualStyleBackColor = True
         '
+        'Panel1
+        '
+        Me.Panel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.Controls.Add(Me.examinarImagenesMaquinaButton)
+        Me.Panel1.Controls.Add(Me.imagenesMaquinaLabel)
+        Me.Panel1.Location = New System.Drawing.Point(3, 6)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(160, 52)
+        Me.Panel1.TabIndex = 22
+        '
+        'examinarImagenesMaquinaButton
+        '
+        Me.examinarImagenesMaquinaButton.Location = New System.Drawing.Point(70, 8)
+        Me.examinarImagenesMaquinaButton.Name = "examinarImagenesMaquinaButton"
+        Me.examinarImagenesMaquinaButton.Size = New System.Drawing.Size(75, 28)
+        Me.examinarImagenesMaquinaButton.TabIndex = 15
+        Me.examinarImagenesMaquinaButton.Text = "Examinar"
+        Me.examinarImagenesMaquinaButton.UseVisualStyleBackColor = True
+        '
+        'imagenesMaquinaLabel
+        '
+        Me.imagenesMaquinaLabel.AutoSize = True
+        Me.imagenesMaquinaLabel.Location = New System.Drawing.Point(3, 16)
+        Me.imagenesMaquinaLabel.Name = "imagenesMaquinaLabel"
+        Me.imagenesMaquinaLabel.Size = New System.Drawing.Size(53, 13)
+        Me.imagenesMaquinaLabel.TabIndex = 6
+        Me.imagenesMaquinaLabel.Text = "Imágenes"
+        '
         'TableLayoutPanel3
         '
         Me.TableLayoutPanel3.ColumnCount = 2
@@ -282,20 +296,21 @@ Partial Class FormMaquinas
         Me.TableLayoutPanel3.Controls.Add(Me.descripcionMaquinaTextBox, 0, 1)
         Me.TableLayoutPanel3.Controls.Add(Me.caracteristicasMaquinaLabel, 1, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.caracteristicasMaquinaTextBox, 1, 1)
-        Me.TableLayoutPanel3.Location = New System.Drawing.Point(3, 113)
+        Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel3.Location = New System.Drawing.Point(3, 92)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         Me.TableLayoutPanel3.RowCount = 2
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 136.0!))
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(1039, 193)
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(860, 201)
         Me.TableLayoutPanel3.TabIndex = 21
         '
         'descripcionMaquinaLabel
         '
         Me.descripcionMaquinaLabel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.descripcionMaquinaLabel.AutoSize = True
-        Me.descripcionMaquinaLabel.Location = New System.Drawing.Point(3, 44)
+        Me.descripcionMaquinaLabel.Location = New System.Drawing.Point(3, 52)
         Me.descripcionMaquinaLabel.Name = "descripcionMaquinaLabel"
         Me.descripcionMaquinaLabel.Size = New System.Drawing.Size(63, 13)
         Me.descripcionMaquinaLabel.TabIndex = 2
@@ -303,7 +318,7 @@ Partial Class FormMaquinas
         '
         'descripcionMaquinaTextBox
         '
-        Me.descripcionMaquinaTextBox.Location = New System.Drawing.Point(3, 60)
+        Me.descripcionMaquinaTextBox.Location = New System.Drawing.Point(3, 68)
         Me.descripcionMaquinaTextBox.Multiline = True
         Me.descripcionMaquinaTextBox.Name = "descripcionMaquinaTextBox"
         Me.descripcionMaquinaTextBox.Size = New System.Drawing.Size(384, 105)
@@ -313,7 +328,7 @@ Partial Class FormMaquinas
         '
         Me.caracteristicasMaquinaLabel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.caracteristicasMaquinaLabel.AutoSize = True
-        Me.caracteristicasMaquinaLabel.Location = New System.Drawing.Point(527, 44)
+        Me.caracteristicasMaquinaLabel.Location = New System.Drawing.Point(437, 52)
         Me.caracteristicasMaquinaLabel.Name = "caracteristicasMaquinaLabel"
         Me.caracteristicasMaquinaLabel.Size = New System.Drawing.Size(125, 13)
         Me.caracteristicasMaquinaLabel.TabIndex = 7
@@ -321,7 +336,7 @@ Partial Class FormMaquinas
         '
         'caracteristicasMaquinaTextBox
         '
-        Me.caracteristicasMaquinaTextBox.Location = New System.Drawing.Point(527, 60)
+        Me.caracteristicasMaquinaTextBox.Location = New System.Drawing.Point(437, 68)
         Me.caracteristicasMaquinaTextBox.Multiline = True
         Me.caracteristicasMaquinaTextBox.Name = "caracteristicasMaquinaTextBox"
         Me.caracteristicasMaquinaTextBox.Size = New System.Drawing.Size(405, 105)
@@ -331,29 +346,22 @@ Partial Class FormMaquinas
         '
         Me.imagenesOpenFileDialog.FileName = "OpenFileDialog1"
         '
-        'contenedorImagenesFlowLayoutPanel
-        '
-        Me.contenedorImagenesFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.contenedorImagenesFlowLayoutPanel.Location = New System.Drawing.Point(3, 68)
-        Me.contenedorImagenesFlowLayoutPanel.Name = "contenedorImagenesFlowLayoutPanel"
-        Me.contenedorImagenesFlowLayoutPanel.Size = New System.Drawing.Size(1033, 109)
-        Me.contenedorImagenesFlowLayoutPanel.TabIndex = 23
-        '
         'FormMaquinas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1085, 553)
+        Me.ClientSize = New System.Drawing.Size(866, 581)
         Me.Controls.Add(Me.TableLayoutPanel2)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormMaquinas"
         Me.Text = "FabLab - Máquinas"
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel4.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.TableLayoutPanel3.PerformLayout()
         Me.ResumeLayout(False)
