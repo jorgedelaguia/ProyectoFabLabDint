@@ -129,10 +129,10 @@
     <Compile Include="Resources\FormUsuarios.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Resources\FromMaquinas.Designer.vb">
-      <DependentUpon>FromMaquinas.vb</DependentUpon>
+    <Compile Include="Resources\FormMaquinas.Designer.vb">
+      <DependentUpon>FormMaquinas.vb</DependentUpon>
     </Compile>
-    <Compile Include="Resources\FromMaquinas.vb">
+    <Compile Include="Resources\FormMaquinas.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -158,8 +158,8 @@
     <EmbeddedResource Include="Resources\FormUsuarios.resx">
       <DependentUpon>FormUsuarios.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\FromMaquinas.resx">
-      <DependentUpon>FromMaquinas.vb</DependentUpon>
+    <EmbeddedResource Include="Resources\FormMaquinas.resx">
+      <DependentUpon>FormMaquinas.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
